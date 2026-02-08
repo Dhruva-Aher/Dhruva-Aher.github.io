@@ -1,778 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhruva Aher - Software Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --bg-tertiary: #1a1a1a;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --text-tertiary: #71717a;
-            --border: #27272a;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 80px 60px;
-        }
-        
-        /* Header */
-        header {
-            margin-bottom: 100px;
-            text-align: center;
-        }
-        
-        .name {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .title {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-bottom: 12px;
-        }
-        
-        .subtitle {
-            font-size: 1.125rem;
-            color: var(--text-tertiary);
-            font-weight: 300;
-        }
-        
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 60px 0 80px;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.2s ease;
-            position: relative;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -21px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transition: transform 0.2s ease;
-        }
-        
-        nav a:hover {
-            color: var(--text-primary);
-        }
-        
-        nav a:hover::after {
-            transform: scaleX(1);
-        }
-        
-        /* Section */
-        section {
-            margin-bottom: 120px;
-        }
-        
-        .section-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-tertiary);
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 48px;
-            letter-spacing: -0.02em;
-        }
-        
-        /* About */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .about-text {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            font-weight: 300;
-        }
-        
-        .highlight {
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-top: 60px;
-            padding-top: 60px;
-            border-top: 1px solid var(--border);
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-        
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--text-tertiary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 500;
-        }
-        
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-        
-        .project {
-            background: var(--bg-primary);
-            padding: 48px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .project::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--accent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .project:hover {
-            background: var(--bg-secondary);
-        }
-        
-        .project:hover::before {
-            opacity: 1;
-        }
-        
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-        
-        .project-meta {
-            font-size: 0.875rem;
-            color: var(--text-tertiary);
-            font-weight: 400;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 16px;
-        }
-        
-        .project-link {
-            color: var(--text-tertiary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s ease;
-            font-weight: 500;
-        }
-        
-        .project-link:hover {
-            color: var(--accent);
-        }
-        
-        .project-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-weight: 300;
-        }
-        
-        .project-highlights {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-        
-        .project-highlights li {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
-            padding-left: 24px;
-            position: relative;
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-        
-        .project-highlights li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        
-        .tech {
-            font-size: 0.8125rem;
-            color: var(--text-tertiary);
-            padding: 6px 14px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
-        
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-        
-        .skill-category {
-            background: var(--bg-primary);
-            padding: 40px;
-            transition: background 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            background: var(--bg-secondary);
-        }
-        
-        .skill-name {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-tertiary);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .skill-list {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            font-weight: 300;
-        }
-        
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-        
-        .contact-item {
-            background: var(--bg-primary);
-            padding: 48px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .contact-item:hover {
-            background: var(--bg-secondary);
-        }
-        
-        .contact-label {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-tertiary);
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-        
-        .contact-value {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            transition: color 0.2s ease;
-        }
-        
-        .contact-item:hover .contact-value {
-            color: var(--accent);
-        }
-        
-        /* Footer */
-        footer {
-            margin-top: 120px;
-            padding-top: 60px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 40px;
-        }
-        
-        .social-link {
-            color: var(--text-tertiary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.2s ease;
-        }
-        
-        .social-link:hover {
-            color: var(--accent);
-        }
-        
-        .copyright {
-            font-size: 0.8125rem;
-            color: var(--text-tertiary);
-            font-weight: 400;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 60px 40px;
-            }
-            
-            .name {
-                font-size: 3rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .container {
-                padding: 40px 24px;
-            }
-            
-            .name {
-                font-size: 2.5rem;
-            }
-            
-            .title {
-                font-size: 1.25rem;
-            }
-            
-            nav {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            
-            nav a::after {
-                display: none;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project {
-                padding: 32px 24px;
-            }
-            
-            .project-header {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                gap: 16px;
-            }
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Selection */
-        ::selection {
-            background: var(--accent);
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dhruva Aher - Software Engineer</title>
+
+  <meta name="description" content="Dhruva Aher — Software Engineer. CS @ Arizona State University. Backend + full-stack projects." />
+  <meta name="theme-color" content="#302b63" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dhruva Aher - Software Engineer" />
+  <meta property="og:description" content="CS @ Arizona State University. Backend + full-stack projects." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg1:#0f0c29;
+      --bg2:#302b63;
+      --bg3:#24243e;
+
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.12);
+
+      --muted:#b8b8d1;
+      --muted2:#8b8b9f;
+
+      --accent1:#667eea;
+      --accent2:#764ba2;
+
+      --shadow: 0 20px 40px rgba(0,0,0,.30);
+      --shadowAccent: 0 10px 40px rgba(102,126,234,.35);
+
+      --radius: 18px;
+      --radius2: 24px;
+
+      --focus: 0 0 0 3px rgba(102,126,234,.55);
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%);
+      color:#fff;
+      overflow-x:hidden;
+      min-height: 100dvh; /* better than 100vh on mobile */
+    }
+
+    /* a11y */
+    .skip-link{
+      position:absolute;
+      top:-40px;
+      left:16px;
+      background:#000;
+      color:#fff;
+      padding:10px 12px;
+      border-radius:10px;
+      z-index:9999;
+      border:1px solid var(--border);
+      text-decoration:none;
+      transition: top .2s ease;
+    }
+    .skip-link:focus{ top:16px; outline:none; box-shadow: var(--focus); }
+
+    /* background particles */
+    .particles{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .particle{
+      position:absolute;
+      width:3px;
+      height:3px;
+      background: rgba(255,255,255,.55);
+      border-radius:50%;
+      opacity:0;
+      animation: float 14s linear infinite;
+      will-change: transform, opacity;
+    }
+    @keyframes float{
+      0%   { transform: translate3d(0, 20px, 0); opacity:0; }
+      10%  { opacity:1; }
+      90%  { opacity:1; }
+      100% { transform: translate3d(90px, -110vh, 0); opacity:0; }
+    }
+
+    /* layout */
+    .container{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      min-height: 100dvh;
+    }
+
+    /* sidebar */
+    aside.sidebar{
+      background: rgba(0,0,0,.30);
+      backdrop-filter: blur(10px);
+      border-right: 1px solid rgba(255,255,255,.10);
+      padding: 56px 36px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap: 24px;
+    }
+
+    .profile{ text-align:center; }
+    .profile-image{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      margin:0 auto 22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:56px;
+      font-weight:800;
+      box-shadow: var(--shadowAccent);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{ box-shadow: var(--shadowAccent); }
+      50%{ box-shadow: 0 10px 60px rgba(102,126,234,.55); }
+    }
+
+    .profile h1{
+      font-size: 2.2rem;
+      margin-bottom:8px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .profile .title{ font-size:1rem; color: var(--muted); margin-bottom:4px; }
+    .profile .subtitle{ font-size:.95rem; color: var(--muted2); margin-bottom: 18px; }
+
+    .stats{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .stat-box{
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 14px;
+      text-align:center;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .stat-box:hover{ background: var(--card2); transform: translateY(-4px); }
+    .stat-number{ display:block; font-size:1.7rem; font-weight:800; color: var(--accent1); }
+    .stat-label{ display:block; font-size:.85rem; color: var(--muted); margin-top:4px; }
+
+    nav.nav-links{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .nav-link{
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      border-radius: 12px;
+      text-decoration:none;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      outline:none;
+    }
+    .nav-link:hover{
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      transform: translateX(8px);
+      box-shadow: 0 6px 22px rgba(102,126,234,.35);
+    }
+    .nav-link:focus{ box-shadow: var(--focus); }
+    .nav-link[aria-current="page"]{
+      background: linear-gradient(135deg, rgba(102,126,234,.35), rgba(118,75,162,.35));
+      border-color: rgba(102,126,234,.45);
+    }
+
+    .social-links{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .social-link{
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#fff;
+      font-size: 1.2rem;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+      outline:none;
+    }
+    .social-link:hover{
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(102,126,234,.35);
+    }
+    .social-link:focus{ box-shadow: var(--focus); }
+
+    /* content */
+    main.content{
+      padding: 56px 56px;
+      overflow: visible;
+    }
+
+    .section{
+      margin-bottom: 54px;
+      scroll-margin-top: 22px;
+    }
+    .section-title{
+      font-size: 2.2rem;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      display:inline-block;
+      position:relative;
+    }
+    .section-title::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-10px;
+      width: 56px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    }
+
+    .about-text{
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 14px;
+      max-width: 950px;
+    }
+    .highlight{ color: var(--accent1); font-weight:700; }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .project-card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+      padding: 26px;
+      position:relative;
+      overflow:hidden;
+      transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+    }
+    .project-card::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      height:4px;
+      width:100%;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      transform: scaleX(0);
+      transform-origin:left;
+      transition: transform .22s ease;
+    }
+    .project-card:hover{
+      background: var(--card2);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+    .project-card:hover::before{ transform: scaleX(1); }
+
+    .project-icon{ font-size: 2.2rem; margin-bottom: 12px; }
+    .project-title{ font-size: 1.35rem; margin-bottom: 10px; }
+    .project-description{
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .95rem;
+      margin-bottom: 14px;
+    }
+    .project-tech{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+    }
+    .tech-tag{
+      background: rgba(102,126,234,.18);
+      border: 1px solid rgba(102,126,234,.30);
+      color: #aeb8ff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: .78rem;
+    }
+
+    .project-links{
+      display:flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap:wrap;
+    }
+    .project-link{
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration:none;
+      font-size: .9rem;
+      font-weight: 700;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      outline:none;
+    }
+    .project-link:focus{ box-shadow: var(--focus); }
+    .primary-link{
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      color:#fff;
+    }
+    .primary-link:hover{ transform: translateY(-2px); box-shadow: 0 10px 26px rgba(102,126,234,.30); }
+    .secondary-link{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+      color: var(--muted);
+    }
+    .secondary-link:hover{ background: rgba(255,255,255,.10); color:#fff; }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .skill-category{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      text-align:center;
+      transition: transform .2s ease, background .2s ease;
+      min-height: 150px;
+    }
+    .skill-category:hover{ background: var(--card2); transform: translateY(-4px); }
+    .skill-icon{ font-size: 1.7rem; margin-bottom: 10px; }
+    .skill-name{ font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+    .skill-items{ color: var(--muted); font-size: .85rem; line-height: 1.6; }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .contact-card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align:center;
+      transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+    }
+    .contact-card:hover{
+      background: linear-gradient(135deg, rgba(102,126,234,.35), rgba(118,75,162,.35));
+      transform: translateY(-8px);
+      box-shadow: 0 16px 34px rgba(102,126,234,.20);
+      border-color: rgba(102,126,234,.35);
+    }
+    .contact-icon{ font-size: 2rem; margin-bottom: 10px; }
+    .contact-label{ font-size: .9rem; color: var(--muted); margin-bottom: 8px; }
+    .contact-value{ color:#fff; text-decoration:none; word-break: break-word; }
+    .contact-value:focus{ outline:none; box-shadow: var(--focus); border-radius: 10px; display:inline-block; padding: 2px 6px; }
+
+    footer{
+      color: rgba(255,255,255,.55);
+      font-size: .85rem;
+      margin-top: 26px;
+    }
+
+    /* responsive */
+    @media (max-width: 1200px){
+      .projects-grid{ grid-template-columns: 1fr; }
+      .skills-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 980px){
+      .container{ grid-template-columns: 1fr; }
+      aside.sidebar{
+        position: sticky;
+        top:0;
+        z-index: 5;
+        padding: 18px 18px;
+        border-right:none;
+        border-bottom: 1px solid rgba(255,255,255,.10);
+      }
+      .stats{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .profile-image{ width:72px; height:72px; font-size:28px; margin-bottom: 10px; }
+      .profile h1{ font-size: 1.5rem; }
+      main.content{ padding: 26px 18px; }
+      .contact-grid{ grid-template-columns: 1fr; }
+      .skills-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px){
+      .stats{ grid-template-columns: 1fr 1fr; }
+    }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .particle{ animation:none !important; opacity:.25; }
+      .profile-image{ animation:none !important; }
+      .project-card, .skill-category, .contact-card, .nav-link, .social-link, .stat-box{
+        transition:none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1 class="name">Dhruva Aher</h1>
-            <p class="title">Software Engineer</p>
-            <p class="subtitle">Computer Science @ Arizona State University</p>
-        </header>
-        
-        <!-- Navigation -->
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <div class="container">
+    <aside class="sidebar" aria-label="Sidebar">
+      <div>
+        <div class="profile">
+          <div class="profile-image" aria-hidden="true">DA</div>
+          <h1>Dhruva Aher</h1>
+          <p class="title">Software Engineer</p>
+          <p class="subtitle">CS @ Arizona State University</p>
+        </div>
+
+        <div class="stats" aria-label="Quick stats">
+          <div class="stat-box"><span class="stat-number">4.0</span><span class="stat-label">GPA</span></div>
+          <div class="stat-box"><span class="stat-number">5+</span><span class="stat-label">Projects</span></div>
+          <div class="stat-box"><span class="stat-number">90%</span><span class="stat-label">ML Accuracy</span></div>
+          <div class="stat-box"><span class="stat-number">&lt;2s</span><span class="stat-label">Response Time</span></div>
+        </div>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about" class="nav-link" data-nav="about"><span aria-hidden="true">👋</span><span>About</span></a>
+          <a href="#projects" class="nav-link" data-nav="projects"><span aria-hidden="true">💻</span><span>Projects</span></a>
+          <a href="#skills" class="nav-link" data-nav="skills"><span aria-hidden="true">🚀</span><span>Skills</span></a>
+          <a href="#contact" class="nav-link" data-nav="contact"><span aria-hidden="true">📧</span><span>Contact</span></a>
         </nav>
-        
-        <!-- About Section -->
-        <section id="about">
-            <div class="section-label">Introduction</div>
-            <div class="about-content">
-                <p class="about-text">
-                    I'm a Computer Science student at <span class="highlight">Arizona State University</span> with a 
-                    <span class="highlight">4.0 GPA</span>, focused on building backend systems that work under real constraints.
-                </p>
-                <p class="about-text">
-                    Recently, I built a <span class="highlight">Raspberry Pi wearable using computer vision</span> to help 
-                    visually impaired users identify clothing, achieving <span class="highlight">90% accuracy with sub-2 second 
-                    response time</span>. I also shipped a fullstack AI productivity assistant in 36 hours using Flask and React.
-                </p>
-                <p class="about-text">
-                    I primarily work in <span class="highlight">Java and Python</span>, building REST APIs and scalable 
-                    backend systems. I care about performance, reliability, and clean system design.
-                </p>
-                <p class="about-text">
-                    Currently seeking <span class="highlight">Software Engineering Internship opportunities for Summer 2026</span>.
-                </p>
-                
-                <div class="stats-grid">
-                    <div class="stat">
-                        <span class="stat-number">4.0</span>
-                        <span class="stat-label">GPA</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">90%</span>
-                        <span class="stat-label">ML Accuracy</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">&lt;2s</span>
-                        <span class="stat-label">Response Time</span>
-                    </div>
-                </div>
+      </div>
+
+      <div>
+        <div class="social-links" aria-label="Social links">
+          <a href="https://github.com/Dhruva-Aher" target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="GitHub">
+            <span aria-hidden="true">💾</span>
+          </a>
+          <a href="https://linkedin.com/in/dhruva-aher" target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="LinkedIn">
+            <span aria-hidden="true">💼</span>
+          </a>
+          <a href="mailto:dhruvaaher48@gmail.com" class="social-link" aria-label="Email">
+            <span aria-hidden="true">📧</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main id="main" class="content" tabindex="-1">
+      <section id="about" class="section" aria-labelledby="about-title">
+        <h2 class="section-title" id="about-title">About Me</h2>
+        <p class="about-text">
+          I'm a <span class="highlight">Computer Science student at Arizona State University</span> with a 4.0 GPA,
+          focused on building backend systems that work under real constraints.
+        </p>
+        <p class="about-text">
+          Recently, I built a <span class="highlight">Raspberry Pi wearable using computer vision</span> to help
+          visually impaired users identify clothing, achieving <span class="highlight">90% accuracy with sub-2 second response time</span>.
+          I also shipped a fullstack AI productivity assistant in 36 hours using Flask and React.
+        </p>
+        <p class="about-text">
+          I primarily work in <span class="highlight">Java and Python</span>, building REST APIs and backend systems.
+          I care about performance, reliability, and clean system design.
+        </p>
+        <p class="about-text">
+          Currently seeking <span class="highlight">Software Engineering Internship opportunities for Summer 2026</span>
+          (backend or full-stack).
+        </p>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title">Featured Projects</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">👕</div>
+            <h3 class="project-title">LaundryLens</h3>
+            <p class="project-description">
+              Raspberry Pi wearable using computer vision to identify 15+ clothing attributes for visually
+              impaired users with real-time audio feedback and 90%+ accuracy.
+            </p>
+            <div class="project-tech" aria-label="Tech stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Raspberry Pi</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">OpenAI API</span>
             </div>
-        </section>
-        
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="section-label">Featured Work</div>
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="projects-grid">
-                <div class="project">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">LaundryLens</h3>
-                            <p class="project-meta">Assistive Wearable Device • Aug 2025 - Dec 2025</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Dhruva-Aher/LaundryLens" target="_blank" class="project-link">GitHub →</a>
-                            <a href="#" target="_blank" class="project-link">Demo →</a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Raspberry Pi wearable using computer vision to identify 15+ clothing attributes for visually 
-                        impaired users with real-time audio feedback.
-                    </p>
-                    <ul class="project-highlights">
-                        <li>Achieved 90%+ accuracy with sub-2 second response time</li>
-                        <li>Integrated OpenAI Vision API with button-triggered capture and text-to-speech output</li>
-                        <li>Collaborated in 6-person team through 8+ hardware iterations</li>
-                        <li>Resolved 10+ GPIO wiring and sensor calibration issues</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech">Python</span>
-                        <span class="tech">Raspberry Pi</span>
-                        <span class="tech">OpenCV</span>
-                        <span class="tech">OpenAI API</span>
-                        <span class="tech">Computer Vision</span>
-                    </div>
-                </div>
-                
-                <div class="project">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">AI Productivity Assistant</h3>
-                            <p class="project-meta">Full-Stack Web App • Sep 2025 - Present</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Dhruva-Aher/Sunhacks-2025" target="_blank" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Full-stack web application built in 36 hours automating calendar scheduling, email drafting, 
-                        and task management from natural language input.
-                    </p>
-                    <ul class="project-highlights">
-                        <li>Processed 50+ queries with 85%+ intent accuracy</li>
-                        <li>Developed Python Flask backend with 2 API endpoints using JSON payloads</li>
-                        <li>Integrated Google Gemini API for natural language processing</li>
-                        <li>Created responsive React.js frontend with 5+ interactive components</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech">Python</span>
-                        <span class="tech">Flask</span>
-                        <span class="tech">React.js</span>
-                        <span class="tech">Google Gemini API</span>
-                        <span class="tech">REST API</span>
-                    </div>
-                </div>
-                
-                <div class="project">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">Icebreaker AI</h3>
-                            <p class="project-meta">Conversational AI • Sep 2025 - Present</p>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Dhruva-Aher/DevHacks-2025-Project" target="_blank" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Conversational AI application generating personalized icebreaker questions using Google Gemini 
-                        and Supermemory APIs.
-                    </p>
-                    <ul class="project-highlights">
-                        <li>Processed 100+ conversation turns with sub-1 second response latency</li>
-                        <li>Built Python backend integrating multiple API calls with error handling</li>
-                        <li>Created Python Flet frontend for real-time chat interface</li>
-                        <li>Designed context storage logic maintaining session history across 20+ cycles</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech">Python</span>
-                        <span class="tech">Flet</span>
-                        <span class="tech">Google Gemini API</span>
-                        <span class="tech">Supermemory API</span>
-                    </div>
-                </div>
-                
-                <div class="project">
-                    <div class="project-header">
-                        <div>
-                            <h3 class="project-title">AR Glasses for Dementia Patients</h3>
-                            <p class="project-meta">Research Project • Aug 2025 - Dec 2025</p>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Researched and proposed augmented reality glasses to assist dementia patients with memory 
-                        retention and facial recognition.
-                    </p>
-                    <ul class="project-highlights">
-                        <li>Analyzed technical requirements including cameras, sensors, and AI integration systems</li>
-                        <li>Collaborated with team to design proof-of-concept and present findings</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech">Research</span>
-                        <span class="tech">AR/VR</span>
-                        <span class="tech">Technical Analysis</span>
-                    </div>
-                </div>
+            <div class="project-links">
+              <a href="https://github.com/Dhruva-Aher/LaundryLens" target="_blank" rel="noopener noreferrer"
+                 class="project-link primary-link">View Code →</a>
+              <a href="#" class="project-link secondary-link" aria-disabled="true"
+                 onclick="return false;">Demo Video</a>
             </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="section-label">Expertise</div>
-            <h2 class="section-title">Technical Skills</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-name">Languages</div>
-                    <div class="skill-list">
-                        Python<br>
-                        Java<br>
-                        SQL<br>
-                        JavaScript<br>
-                        HTML/CSS
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-name">Frameworks</div>
-                    <div class="skill-list">
-                        Flask<br>
-                        FastAPI<br>
-                        React.js<br>
-                        Flet<br>
-                        NumPy, SciPy
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-name">Tools</div>
-                    <div class="skill-list">
-                        Git<br>
-                        MySQL<br>
-                        Raspberry Pi<br>
-                        Linux<br>
-                        REST APIs
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-name">APIs & Services</div>
-                    <div class="skill-list">
-                        OpenAI API<br>
-                        Google Gemini<br>
-                        Supermemory<br>
-                        Computer Vision<br>
-                        JSON
-                    </div>
-                </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">🤖</div>
+            <h3 class="project-title">AI Productivity Assistant</h3>
+            <p class="project-description">
+              Full-stack web app built in 36 hours automating calendar scheduling, email drafting, and task
+              management from natural language with 85%+ intent accuracy.
+            </p>
+            <div class="project-tech" aria-label="Tech stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Gemini API</span>
             </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="section-label">Get In Touch</div>
-            <h2 class="section-title">Contact</h2>
-            
-            <div class="contact-grid">
-                <a href="mailto:dhruvaaher48@gmail.com" class="contact-item">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">dhruvaaher48@gmail.com</div>
-                </a>
-                
-                <a href="https://linkedin.com/in/dhruva-aher" target="_blank" class="contact-item">
-                    <div class="contact-label">LinkedIn</div>
-                    <div class="contact-value">dhruva-aher</div>
-                </a>
-                
-                <a href="https://github.com/Dhruva-Aher" target="_blank" class="contact-item">
-                    <div class="contact-label">GitHub</div>
-                    <div class="contact-value">Dhruva-Aher</div>
-                </a>
+            <div class="project-links">
+              <a href="https://github.com/Dhruva-Aher/Sunhacks-2025" target="_blank" rel="noopener noreferrer"
+                 class="project-link primary-link">View Code →</a>
             </div>
-        </section>
-        
-        <!-- Footer -->
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">💬</div>
+            <h3 class="project-title">Icebreaker AI</h3>
+            <p class="project-description">
+              Conversational AI generating personalized icebreaker questions using Google Gemini and Supermemory
+              APIs with sub-1 second response latency.
+            </p>
+            <div class="project-tech" aria-label="Tech stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flet</span>
+              <span class="tech-tag">Gemini API</span>
+              <span class="tech-tag">Supermemory</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Dhruva-Aher/DevHacks-2025-Project" target="_blank" rel="noopener noreferrer"
+                 class="project-link primary-link">View Code →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">🕶️</div>
+            <h3 class="project-title">AR Glasses Research</h3>
+            <p class="project-description">
+              Researched and proposed augmented reality glasses to assist dementia patients with memory retention
+              and facial recognition using AI integration.
+            </p>
+            <div class="project-tech" aria-label="Tech stack">
+              <span class="tech-tag">Research</span>
+              <span class="tech-tag">AR/VR</span>
+              <span class="tech-tag">AI Systems</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">💻</div>
+            <div class="skill-name">Languages</div>
+            <div class="skill-items">Python • Java<br />SQL • JavaScript<br />HTML/CSS</div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">⚙️</div>
+            <div class="skill-name">Frameworks</div>
+            <div class="skill-items">Flask • FastAPI<br />React • Flet<br />NumPy • SciPy</div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">🛠️</div>
+            <div class="skill-name">Tools</div>
+            <div class="skill-items">Git • MySQL<br />Raspberry Pi<br />Linux • REST APIs</div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-icon" aria-hidden="true">🔌</div>
+            <div class="skill-name">APIs</div>
+            <div class="skill-items">OpenAI<br />Google Gemini<br />Computer Vision</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <h2 class="section-title" id="contact-title">Get In Touch</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon" aria-hidden="true">📧</div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:dhruvaaher48@gmail.com" class="contact-value">dhruvaaher48@gmail.com</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon" aria-hidden="true">💼</div>
+            <div class="contact-label">LinkedIn</div>
+            <a href="https://linkedin.com/in/dhruva-aher" target="_blank" rel="noopener noreferrer" class="contact-value">
+              linkedin.com/in/dhruva-aher
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon" aria-hidden="true">💾</div>
+            <div class="contact-label">GitHub</div>
+            <a href="https://github.com/Dhruva-Aher" target="_blank" rel="noopener noreferrer" class="contact-value">
+              github.com/Dhruva-Aher
+            </a>
+          </div>
+        </div>
+
         <footer>
-            <div class="social-links">
-                <a href="https://github.com/Dhruva-Aher" target="_blank" class="social-link">GitHub</a>
-                <a href="https://linkedin.com/in/dhruva-aher" target="_blank" class="social-link">LinkedIn</a>
-                <a href="mailto:dhruvaaher48@gmail.com" class="social-link">Email</a>
-            </div>
-            <p class="copyright">© 2026 Dhruva Aher. All rights reserved.</p>
+          <p>© <span id="year"></span> Dhruva Aher</p>
         </footer>
-    </div>
-    
-    <script>
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Particles (respects reduced motion)
+    (function () {
+      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) return;
+
+      const container = document.getElementById('particles');
+      const count = 46;
+
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = (Math.random() * 100) + '%';
+        p.style.top = (Math.random() * 100) + '%';
+        p.style.animationDelay = (Math.random() * 12) + 's';
+        p.style.animationDuration = (Math.random() * 8 + 10) + 's';
+        p.style.opacity = '0';
+        container.appendChild(p);
+      }
+    })();
+
+    // Active nav highlight based on scroll
+    (function () {
+      const sections = ['about', 'projects', 'skills', 'contact'];
+      const links = new Map();
+      document.querySelectorAll('.nav-link[data-nav]').forEach(a => links.set(a.dataset.nav, a));
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const id = e.target.id;
+          links.forEach(a => a.removeAttribute('aria-current'));
+          const active = links.get(id);
+          if (active) active.setAttribute('aria-current', 'page');
         });
-    </script>
+      }, { root: null, threshold: 0.25 });
+
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
