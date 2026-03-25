@@ -72,10 +72,6 @@ section{padding:7rem 3rem;}
 .edu-field{font-size:.9rem;color:var(--muted);font-weight:300;margin-bottom:1.5rem;}
 .edu-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;}
 .edu-badge{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;padding:.28rem .7rem;border:1px solid var(--accent);color:var(--accent);text-transform:uppercase;}
-.edu-hr{height:1px;background:var(--border);margin:1.75rem 0;}
-.edu-cw-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;}
-.edu-cw{display:flex;flex-wrap:wrap;gap:.45rem;}
-.edu-cw .tag{cursor:default;}
 /* right panel — stacked cards matching .ac2 style */
 .edu-side{display:flex;flex-direction:column;gap:1.25rem;}
 .edu-stat{background:var(--bg);border:1px solid var(--border);padding:1.35rem 1.75rem;display:flex;align-items:center;gap:1.25rem;transition:border-color .2s,transform .2s;}
@@ -139,11 +135,6 @@ section{padding:7rem 3rem;}
 .skb{width:60px;height:2px;background:var(--border);position:relative;overflow:hidden;}
 .skf{position:absolute;left:0;top:0;bottom:0;background:var(--accent);width:0%;transition:width 1s ease;}
 .skf.on{width:var(--p);}
-.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-.ci{background:var(--bg);padding:1.5rem 2rem;transition:background .2s;}
-.ci:hover{background:var(--surface);}
-.cc{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:.4rem;}
-.cn{font-size:.9rem;color:#aaa;font-weight:300;}
 #contact{text-align:center;position:relative;overflow:hidden;}
 .cbg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:transparent;-webkit-text-stroke:1px var(--border);white-space:nowrap;user-select:none;pointer-events:none;z-index:0;opacity:.4;}
 #contact > *{position:relative;z-index:1;}
@@ -158,8 +149,8 @@ section{padding:7rem 3rem;}
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;color:var(--muted2);text-transform:uppercase;}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}
 .reveal.on{opacity:1;transform:translateY(0);}
-@media(max-width:960px){nav{padding:1rem 1.5rem;}.nav-links{gap:1.25rem;}#hero{padding:0 1.5rem 4rem;}section{padding:5rem 1.5rem;}#about{grid-template-columns:1fr;gap:3rem;}.edu-wrap{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.pc.feat,.pc.wide{grid-column:span 1;grid-template-columns:1fr;}.psc{flex-direction:row;flex-wrap:wrap;gap:1.5rem;min-width:unset;}.sg{grid-template-columns:repeat(2,1fr);}.cg{grid-template-columns:repeat(2,1fr);}footer{flex-direction:column;gap:.75rem;text-align:center;}}
-@media(max-width:560px){.hero-stats{gap:1.5rem;flex-wrap:wrap;}.sg,.cg{grid-template-columns:1fr;}.nav-links{display:none;}}
+@media(max-width:960px){nav{padding:1rem 1.5rem;}.nav-links{gap:1.25rem;}#hero{padding:0 1.5rem 4rem;}section{padding:5rem 1.5rem;}#about{grid-template-columns:1fr;gap:3rem;}.edu-wrap{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.pc.feat,.pc.wide{grid-column:span 1;grid-template-columns:1fr;}.psc{flex-direction:row;flex-wrap:wrap;gap:1.5rem;min-width:unset;}.sg{grid-template-columns:repeat(2,1fr);}footer{flex-direction:column;gap:.75rem;text-align:center;}}
+@media(max-width:560px){.hero-stats{gap:1.5rem;flex-wrap:wrap;}.sg{grid-template-columns:1fr;}.nav-links{display:none;}}
 </style>
 </head>
 <body>
@@ -171,7 +162,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
     <li><a href="#exp">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#sk">Skills</a></li>
-    <li><a href="#cw">Courses</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -215,7 +205,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <div class="sh reveal"><span class="sn">02 —</span><h2 class="st">Education</h2><div class="sl"></div></div>
   <div class="edu-wrap">
 
-    <!-- Left: degree + coursework -->
+    <!-- Left: degree info -->
     <div class="edu-main reveal">
       <div class="edu-school">Arizona State University · Tempe, Arizona</div>
       <div class="edu-deg">B.S. Computer Science</div>
@@ -223,19 +213,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
       <div class="edu-badges">
         <span class="edu-badge">Grand Challenges Scholars</span>
         <span class="edu-badge">Dean's List · Fall 2025</span>
-      </div>
-      <div class="edu-hr"></div>
-      <div class="edu-cw-lbl">Relevant Coursework</div>
-      <div class="edu-cw">
-        <span class="tag">CSE 110 · Principles of Programming</span>
-        <span class="tag">CSE 205 · OOP &amp; Data Structures</span>
-        <span class="tag">CSE 240 · Programming Languages</span>
-        <span class="tag">CSE 120 · Digital Design Fundamentals</span>
-        <span class="tag">CSE 301 · Computing Ethics</span>
-        <span class="tag">MAT 243 · Discrete Math Structures</span>
-        <span class="tag">MAT 265 · Calculus I</span>
-        <span class="tag">MAT 266 · Calculus II</span>
-        <span class="tag">MAT 267 · Calculus III</span>
       </div>
     </div>
 
@@ -416,26 +393,10 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
-<!-- ── COURSEWORK ── -->
-<section id="cw">
-  <div class="sh reveal"><span class="sn">06 —</span><h2 class="st">Coursework</h2><div class="sl"></div></div>
-  <div class="cg reveal">
-    <div class="ci"><div class="cc">CSE 110</div><div class="cn">Principles of Programming</div></div>
-    <div class="ci"><div class="cc">CSE 205</div><div class="cn">Object-Oriented Program &amp; Data Structures</div></div>
-    <div class="ci"><div class="cc">CSE 240</div><div class="cn">Intro to Programming Languages</div></div>
-    <div class="ci"><div class="cc">CSE 120</div><div class="cn">Digital Design Fundamentals</div></div>
-    <div class="ci"><div class="cc">CSE 301</div><div class="cn">Computing Ethics</div></div>
-    <div class="ci"><div class="cc">MAT 243</div><div class="cn">Discrete Math Structures</div></div>
-    <div class="ci"><div class="cc">MAT 265</div><div class="cn">Calculus for Engineers I</div></div>
-    <div class="ci"><div class="cc">MAT 266</div><div class="cn">Calculus for Engineers II</div></div>
-    <div class="ci"><div class="cc">MAT 267</div><div class="cn">Calculus for Engineers III</div></div>
-  </div>
-</section>
-
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="cbg">HELLO</div>
-  <div class="clbl reveal">07 — Get in touch</div>
+  <div class="clbl reveal">06 — Get in touch</div>
   <h2 class="ch reveal">Let's Build<br>Something.</h2>
   <p class="cs reveal">Open to SWE internship opportunities for Summer 2026, interesting projects, or a good conversation about systems and AI.</p>
   <a href="mailto:daher@asu.edu" class="cem reveal">daher@asu.edu</a>
