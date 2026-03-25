@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhruva Aher — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#111;--border:#222;--accent:#ff4d00;--accent2:#ff8c42;--text:#f0ede8;--muted:#666;--muted2:#444;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.4;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
+nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-color:var(--border);}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.05em;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3rem 5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;top:50%;right:-1rem;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(16rem,28vw,32rem);color:transparent;-webkit-text-stroke:1px var(--border);user-select:none;pointer-events:none;white-space:nowrap;animation:float 8s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(-50%);}50%{transform:translateY(-52%) translateX(-1rem);}}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s .2s forwards;}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,12vw,13rem);line-height:.9;letter-spacing:.02em;opacity:0;animation:fadeUp .7s .35s forwards;}
+.hero-name .ac{color:var(--accent);}
+.hero-sub{margin-top:2rem;font-size:1.05rem;color:var(--muted);max-width:520px;font-weight:300;opacity:0;animation:fadeUp .7s .5s forwards;}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-actions{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .65s forwards;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;border:none;cursor:pointer;}
+.btn-p{background:var(--accent);color:#fff;}
+.btn-p:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-o{background:transparent;color:var(--text);border:1px solid var(--border);}
+.btn-o:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.hero-stats{margin-top:4rem;display:flex;gap:3rem;opacity:0;animation:fadeUp .7s .8s forwards;}
+.snum{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--accent);line-height:1;}
+.slbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.25rem;}
+.scroll-hint{position:absolute;bottom:2rem;right:3rem;display:flex;align-items:center;gap:.75rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted2);opacity:0;animation:fadeIn 1s 1.2s forwards;}
+.sline{width:40px;height:1px;background:var(--muted2);position:relative;overflow:hidden;}
+.sline::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--accent);animation:scan 2s 1.5s infinite;}
+@keyframes scan{0%{left:-100%;}100%{left:100%;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+section{padding:7rem 3rem;}
+.sh{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:4rem;}
+.sn{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent);letter-spacing:.1em;}
+.st{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:.03em;line-height:1;}
+.sl{flex:1;height:1px;background:var(--border);max-width:200px;}
+#about{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.at p{color:#aaa;font-size:1rem;line-height:1.85;margin-bottom:1.25rem;font-weight:300;}
+.at p strong{color:var(--text);font-weight:500;}
+.at .sh{margin-bottom:2rem;}
+.ahi{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:1.25rem 1.75rem;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:2rem;}
+.ar{display:flex;flex-direction:column;gap:1.25rem;}
+.ac2{background:var(--surface);border:1px solid var(--border);padding:1.35rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:border-color .2s,transform .2s;}
+.ac2:hover{border-color:var(--accent);transform:translateX(4px);}
+.aci{font-size:1.4rem;flex-shrink:0;margin-top:.1rem;}
+.acl{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;}
+.act{font-size:.88rem;color:#aaa;font-weight:300;line-height:1.5;}
+
+/* ─── Education ─── */
+#edu{background:var(--surface);}
+.edu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+/* left panel — matches .pc style */
+.edu-main{background:var(--bg);border:1px solid var(--border);padding:2.5rem;position:relative;overflow:hidden;transition:border-color .3s;}
+.edu-main:hover{border-color:var(--accent);}
+.edu-main::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--accent);}
+.edu-school{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
+.edu-deg{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.03em;line-height:1;margin-bottom:.4rem;}
+.edu-field{font-size:.9rem;color:var(--muted);font-weight:300;margin-bottom:1.5rem;}
+.edu-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.edu-badge{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;padding:.28rem .7rem;border:1px solid var(--accent);color:var(--accent);text-transform:uppercase;}
+.edu-hr{height:1px;background:var(--border);margin:1.75rem 0;}
+.edu-cw-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;}
+.edu-cw{display:flex;flex-wrap:wrap;gap:.45rem;}
+.edu-cw .tag{cursor:default;}
+/* right panel — stacked cards matching .ac2 style */
+.edu-side{display:flex;flex-direction:column;gap:1.25rem;}
+.edu-stat{background:var(--bg);border:1px solid var(--border);padding:1.35rem 1.75rem;display:flex;align-items:center;gap:1.25rem;transition:border-color .2s,transform .2s;}
+.edu-stat:hover{border-color:var(--accent);transform:translateX(4px);}
+.edu-stat-ico{font-size:1.4rem;flex-shrink:0;}
+.edu-stat-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--accent);line-height:1;}
+.edu-stat-lbl{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;}
+.edu-involve{background:var(--bg);border:1px solid var(--border);padding:1.35rem 1.75rem;flex:1;transition:border-color .2s,transform .2s;}
+.edu-involve:hover{border-color:var(--accent);transform:translateX(4px);}
+.edu-involve-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;}
+.edu-involve-list{display:flex;flex-direction:column;gap:.5rem;}
+.edu-involve-list span{font-size:.85rem;color:#888;font-weight:300;padding-left:1.2rem;position:relative;}
+.edu-involve-list span::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.72rem;top:.05rem;}
+
+#exp{background:var(--bg);}
+.tl{position:relative;padding-left:2rem;}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border);}
+.ti{position:relative;padding:0 0 3.5rem 2.5rem;}
+.ti:last-child{padding-bottom:0;}
+.td{position:absolute;left:-.5rem;top:.35rem;width:1rem;height:1rem;background:var(--bg);border:2px solid var(--muted2);transition:border-color .3s,background .3s;}
+.ti:hover .td{border-color:var(--accent);background:var(--accent);}
+.tdate{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:.5rem;}
+.trole{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.05em;margin-bottom:.2rem;}
+.torg{font-size:.88rem;color:var(--muted);margin-bottom:.85rem;}
+.tb{list-style:none;margin-top:.5rem;max-width:640px;}
+.tb li{font-size:.88rem;color:#888;line-height:1.75;font-weight:300;padding-left:1.2rem;position:relative;margin-bottom:.4rem;}
+.tb li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.75rem;top:.1rem;}
+.tdesc{font-size:.88rem;color:#888;line-height:1.75;max-width:640px;font-weight:300;}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.08em;padding:.3rem .75rem;border:1px solid var(--border);color:var(--muted);transition:border-color .2s,color .2s;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.pc{background:var(--surface);border:1px solid var(--border);padding:2.5rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column;}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.pc:hover{border-color:var(--accent);transform:translateY(-4px);}
+.pc:hover::before{transform:scaleX(1);}
+.pc.feat{grid-column:span 2;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:start;}
+.pc.wide{grid-column:span 2;}
+.pnum{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--muted2);text-transform:uppercase;margin-bottom:1.25rem;}
+.pico{font-size:2rem;margin-bottom:1.25rem;}
+.ptit{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;margin-bottom:.4rem;}
+.pctx{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);letter-spacing:.08em;margin-bottom:1rem;}
+.pb{list-style:none;flex:1;margin-bottom:1.5rem;}
+.pb li{font-size:.88rem;color:#888;line-height:1.75;font-weight:300;padding-left:1.2rem;position:relative;margin-bottom:.4rem;}
+.pb li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.75rem;top:.1rem;}
+.psc{display:flex;flex-direction:column;gap:2rem;padding-top:.5rem;min-width:130px;}
+.psv{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--accent);line-height:1;}
+.psl{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
+.plinks{display:flex;gap:1rem;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--border);}
+.plink{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .2s;display:flex;align-items:center;gap:.4rem;}
+.plink:hover{color:var(--accent);}
+.plink svg{width:12px;height:12px;fill:currentColor;}
+#sk{background:var(--surface);}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.skg{background:var(--bg);border:1px solid var(--border);padding:2rem;transition:border-color .2s;}
+.skg:hover{border-color:var(--accent);}
+.skgl{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;}
+.skgl::after{content:'';flex:1;height:1px;background:var(--border);}
+.skl{display:flex;flex-direction:column;gap:.85rem;}
+.ski{display:flex;align-items:center;justify-content:space-between;font-size:.85rem;color:#aaa;}
+.skb{width:60px;height:2px;background:var(--border);position:relative;overflow:hidden;}
+.skf{position:absolute;left:0;top:0;bottom:0;background:var(--accent);width:0%;transition:width 1s ease;}
+.skf.on{width:var(--p);}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.ci{background:var(--bg);padding:1.5rem 2rem;transition:background .2s;}
+.ci:hover{background:var(--surface);}
+.cc{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:.4rem;}
+.cn{font-size:.9rem;color:#aaa;font-weight:300;}
+#contact{text-align:center;position:relative;overflow:hidden;}
+.cbg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,18vw,20rem);color:transparent;-webkit-text-stroke:1px var(--border);white-space:nowrap;user-select:none;pointer-events:none;z-index:0;opacity:.4;}
+#contact > *{position:relative;z-index:1;}
+.clbl{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
+.ch{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,7rem);line-height:1;margin-bottom:1.5rem;}
+.cs{color:var(--muted);font-weight:300;max-width:420px;margin:0 auto 3rem;}
+.cem{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--text);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:.25rem;margin-bottom:3rem;transition:color .2s;}
+.cem:hover{color:var(--accent);}
+.clinks{display:flex;justify-content:center;gap:1.5rem;margin-bottom:3rem;}
+.clink{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.75rem 1.5rem;border:1px solid var(--border);transition:all .2s;}
+.clink:hover{border-color:var(--accent);color:var(--accent);}
+footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;color:var(--muted2);text-transform:uppercase;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}
+.reveal.on{opacity:1;transform:translateY(0);}
+@media(max-width:960px){nav{padding:1rem 1.5rem;}.nav-links{gap:1.25rem;}#hero{padding:0 1.5rem 4rem;}section{padding:5rem 1.5rem;}#about{grid-template-columns:1fr;gap:3rem;}.edu-wrap{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.pc.feat,.pc.wide{grid-column:span 1;grid-template-columns:1fr;}.psc{flex-direction:row;flex-wrap:wrap;gap:1.5rem;min-width:unset;}.sg{grid-template-columns:repeat(2,1fr);}.cg{grid-template-columns:repeat(2,1fr);}footer{flex-direction:column;gap:.75rem;text-align:center;}}
+@media(max-width:560px){.hero-stats{gap:1.5rem;flex-wrap:wrap;}.sg,.cg{grid-template-columns:1fr;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="nav-logo" href="#hero">D<span>.</span>A</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#edu">Education</a></li>
+    <li><a href="#exp">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#sk">Skills</a></li>
+    <li><a href="#cw">Courses</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-bg">DA</div>
+  <div class="hero-tag">// CS @ Arizona State University &nbsp;·&nbsp; Grand Challenges Scholars Program</div>
+  <h1 class="hero-name">Dhruva<br><span class="ac">Aher.</span></h1>
+  <p class="hero-sub">I build <strong>backend systems and AI-integrated applications</strong> that work under real constraints. Python, Java, REST APIs — from idea to deployment.</p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn btn-p">View Projects →</a>
+    <a href="resume.pdf" download="Dhruva_Aher_Resume.pdf" class="btn btn-o">↓ Resume</a>
+    <a href="#contact" class="btn btn-o">Get in Touch</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="snum">4.0</div><div class="slbl">GPA · Dean's List</div></div>
+    <div><div class="snum">4+</div><div class="slbl">Projects</div></div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="sline"></div></div>
+</section>
+
+<section id="about">
+  <div class="at">
+    <div class="sh"><span class="sn">01 —</span><h2 class="st">About</h2></div>
+    <p>I'm a Computer Science student at <strong>Arizona State University</strong> (4.0 GPA, Dean's List) in the Grand Challenges Scholars Program, building software at the intersection of backend systems and applied AI.</p>
+    <p>I work primarily in <strong>Python and Java</strong>, writing REST APIs, backend services, and full-stack systems. I care about performance, clean architecture, and code that behaves reliably — not just in demos.</p>
+    <p>Recently built a Raspberry Pi wearable using computer vision that achieved <strong>90%+ accuracy</strong> identifying clothing attributes for visually impaired users, and shipped a full-stack AI productivity assistant in <strong>36 hours</strong> at SunHacks 2025.</p>
+    <div class="ahi">Seeking Software Engineering Internship opportunities for Summer 2026 — backend or full-stack. Open to work.</div>
+  </div>
+  <div class="ar reveal">
+    <div class="ac2"><div class="aci">⚙️</div><div><div class="acl">Backend</div><div class="act">Flask · FastAPI · REST APIs · JSON · CRUD · HTTP · MySQL</div></div></div>
+    <div class="ac2"><div class="aci">🤖</div><div><div class="acl">AI & APIs</div><div class="act">OpenAI API · Google Gemini · Supermemory · Computer Vision</div></div></div>
+    <div class="ac2"><div class="aci">🖥️</div><div><div class="acl">Frontend</div><div class="act">React.js · Python Flet · HTML / CSS</div></div></div>
+    <div class="ac2"><div class="aci">🔩</div><div><div class="acl">Hardware & Tools</div><div class="act">Raspberry Pi · GPIO · Linux · Git · GitHub · VSCode · AWS</div></div></div>
+    <div class="ac2"><div class="aci">🎓</div><div><div class="acl">Involvement</div><div class="act">ACM at ASU (Intern, Industry Relations) · Google DSC · Hacker Devils · The AI Society · SoDA x AI Society Bootcamp</div></div></div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="edu">
+  <div class="sh reveal"><span class="sn">02 —</span><h2 class="st">Education</h2><div class="sl"></div></div>
+  <div class="edu-wrap">
+
+    <!-- Left: degree + coursework -->
+    <div class="edu-main reveal">
+      <div class="edu-school">Arizona State University · Tempe, Arizona</div>
+      <div class="edu-deg">B.S. Computer Science</div>
+      <div class="edu-field">Expected May 2029</div>
+      <div class="edu-badges">
+        <span class="edu-badge">Grand Challenges Scholars</span>
+        <span class="edu-badge">Dean's List · Fall 2025</span>
+      </div>
+      <div class="edu-hr"></div>
+      <div class="edu-cw-lbl">Relevant Coursework</div>
+      <div class="edu-cw">
+        <span class="tag">CSE 110 · Principles of Programming</span>
+        <span class="tag">CSE 205 · OOP &amp; Data Structures</span>
+        <span class="tag">CSE 240 · Programming Languages</span>
+        <span class="tag">CSE 120 · Digital Design Fundamentals</span>
+        <span class="tag">CSE 301 · Computing Ethics</span>
+        <span class="tag">MAT 243 · Discrete Math Structures</span>
+        <span class="tag">MAT 265 · Calculus I</span>
+        <span class="tag">MAT 266 · Calculus II</span>
+        <span class="tag">MAT 267 · Calculus III</span>
+      </div>
+    </div>
+
+    <!-- Right: stat cards + involvement -->
+    <div class="edu-side reveal">
+      <div class="edu-stat">
+        <div class="edu-stat-ico">📈</div>
+        <div>
+          <div class="edu-stat-val">4.0 GPA</div>
+          <div class="edu-stat-lbl">Perfect Score · All Semesters</div>
+        </div>
+      </div>
+      <div class="edu-stat">
+        <div class="edu-stat-ico">🏆</div>
+        <div>
+          <div class="edu-stat-val">Dean's List</div>
+          <div class="edu-stat-lbl">Fall 2025 · First Semester</div>
+        </div>
+      </div>
+      <div class="edu-stat">
+        <div class="edu-stat-ico">🎓</div>
+        <div>
+          <div class="edu-stat-val">Aug 2025</div>
+          <div class="edu-stat-lbl">Enrolled · May 2029 Expected</div>
+        </div>
+      </div>
+      <div class="edu-involve">
+        <div class="edu-involve-lbl">Campus Involvement</div>
+        <div class="edu-involve-list">
+          <span>ACM at ASU — Industry Relations Intern</span>
+          <span>Google Developer Student Club</span>
+          <span>Hacker Devils</span>
+          <span>The AI Society</span>
+          <span>SoDA × AI Society Bootcamp</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="exp">
+  <div class="sh reveal"><span class="sn">03 —</span><h2 class="st">Experience</h2><div class="sl"></div></div>
+  <div class="tl">
+    <div class="ti reveal">
+      <div class="td"></div>
+      <div class="tdate">Mar 2026 — Present</div>
+      <div class="trole">Intern — ACM at ASU</div>
+      <div class="torg">ACM at ASU · Hybrid · Tempe, Arizona</div>
+      <div class="tdesc">Working on the Engagement Team (Industry Relations) — connecting students with industry professionals and supporting technical community events at Arizona State University.</div>
+      <div class="tags"><span class="tag">Industry Relations</span><span class="tag">Community</span><span class="tag">Leadership</span></div>
+    </div>
+    <div class="ti reveal">
+      <div class="td"></div>
+      <div class="tdate">Jun 2022 — Jun 2023</div>
+      <div class="trole">Youth Ambassador</div>
+      <div class="torg">Lifology | Designing Lives · Remote · India</div>
+      <ul class="tb">
+        <li>Coordinated virtual STEM workshops reaching 10,000+ students across India.</li>
+        <li>Managed digital participation initiatives across 27,000 schools supporting career readiness programs.</li>
+        <li>Facilitated sessions with professionals from NASA, the United Nations, and Google Cloud.</li>
+        <li>Project selected for the National Guidance Festival 2022 — CBSE-Lifology initiative aligned with NEP 2020.</li>
+      </ul>
+      <div class="tags"><span class="tag">Leadership</span><span class="tag">Program Management</span><span class="tag">Education</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="sh reveal"><span class="sn">04 —</span><h2 class="st">Projects</h2><div class="sl"></div></div>
+  <div class="pg">
+    <div class="pc feat reveal">
+      <div>
+        <div class="pnum">01 / Featured · FSE 100 Engineering Design · Aug–Dec 2025</div>
+        <div class="pico">👕</div>
+        <h3 class="ptit">LaundryLens</h3>
+        <p class="pctx">Assistive Wearable Device · Associated with Arizona State University</p>
+        <ul class="pb">
+          <li>Built Raspberry Pi wearable in Python using computer vision to identify 15+ clothing attributes for visually impaired users with real-time audio feedback.</li>
+          <li>Integrated OpenAI Vision API with button-triggered capture and text-to-speech output; achieved sub-2 second end-to-end response times via optimized hardware controls.</li>
+          <li>Collaborated in a 6-person team through 8+ iterations; resolved 10+ GPIO wiring and sensor calibration issues.</li>
+        </ul>
+        <div class="tags" style="margin-bottom:1.5rem"><span class="tag">Python</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">OpenAI Vision API</span><span class="tag">GPIO</span><span class="tag">Linux</span></div>
+        <div class="plinks"></div>
+      </div>
+      <div class="psc"></div>
+    </div>
+
+    <div class="pc reveal">
+      <div class="pnum">02 · SunHacks 2025</div>
+      <div class="pico">🤖</div>
+      <h3 class="ptit">AI Productivity Assistant</h3>
+      <p class="pctx">Full-Stack Developer · Sep 2025</p>
+      <ul class="pb">
+        <li>Full-stack app in 36 hours — scheduling, email drafting, and task management from natural language; 50+ queries, 85%+ intent accuracy.</li>
+        <li>Flask backend with 2 REST endpoints; Google Gemini for intent parsing.</li>
+        <li>React.js frontend with 5+ components, state management, real-time API response rendering.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React.js</span><span class="tag">Gemini API</span></div>
+      <div class="plinks">
+        <a href="https://github.com/Dhruva-Aher/Sunhacks-2025" class="plink" target="_blank"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View Code</a>
+      </div>
+    </div>
+
+    <div class="pc reveal">
+      <div class="pnum">03 · DevHacks 2025</div>
+      <div class="pico">💬</div>
+      <h3 class="ptit">Icebreaker AI</h3>
+      <p class="pctx">Frontend Developer · Sep 2025</p>
+      <ul class="pb">
+        <li>Conversational AI generating personalized icebreaker questions using Gemini and Supermemory APIs; 100+ conversation turns in testing.</li>
+        <li>Python Flet frontend with real-time chat and sub-1 second response latency.</li>
+        <li>Session history across 20+ question-answer cycles with relevant follow-up generation.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem"><span class="tag">Python</span><span class="tag">Flet</span><span class="tag">Gemini API</span><span class="tag">Supermemory</span></div>
+      <div class="plinks">
+        <a href="https://github.com/Dhruva-Aher/DevHacks-2025-Project" class="plink" target="_blank"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View Code</a>
+      </div>
+    </div>
+
+    <div class="pc wide reveal">
+      <div class="pnum">04 · FSE 150 Grand Challenges Research · Aug–Dec 2025 · ASU</div>
+      <div class="pico">🕶️</div>
+      <h3 class="ptit">AR Glasses for Dementia Patients</h3>
+      <p class="pctx">Research Project · Associated with Arizona State University</p>
+      <ul class="pb" style="max-width:700px">
+        <li>Analyzed AR system architecture integrating computer vision, sensors, and AI processing for assistive wearable applications.</li>
+        <li>Evaluated feasibility of AI-driven facial recognition and memory support in resource-constrained wearable systems.</li>
+        <li>Researched technical requirements including cameras, sensors, and AI integration for dementia patient support.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:0"><span class="tag">Research</span><span class="tag">AR/VR</span><span class="tag">Computer Vision</span><span class="tag">AI Systems</span><span class="tag">Leadership & Teamwork</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="sk">
+  <div class="sh reveal"><span class="sn">05 —</span><h2 class="st">Skills</h2><div class="sl"></div></div>
+  <div class="sg">
+    <div class="skg reveal">
+      <div class="skgl">Languages</div>
+      <div class="skl">
+        <div class="ski"><span>Python</span><div class="skb"><div class="skf" style="--p:95%"></div></div></div>
+        <div class="ski"><span>Java</span><div class="skb"><div class="skf" style="--p:85%"></div></div></div>
+        <div class="ski"><span>JavaScript</span><div class="skb"><div class="skf" style="--p:70%"></div></div></div>
+        <div class="ski"><span>SQL (MySQL)</span><div class="skb"><div class="skf" style="--p:75%"></div></div></div>
+      </div>
+    </div>
+    <div class="skg reveal">
+      <div class="skgl">Backend</div>
+      <div class="skl">
+        <div class="ski"><span>Flask</span><div class="skb"><div class="skf" style="--p:90%"></div></div></div>
+        <div class="ski"><span>REST API Dev</span><div class="skb"><div class="skf" style="--p:88%"></div></div></div>
+        <div class="ski"><span>JSON / HTTP</span><div class="skb"><div class="skf" style="--p:88%"></div></div></div>
+        <div class="ski"><span>CRUD Ops</span><div class="skb"><div class="skf" style="--p:82%"></div></div></div>
+      </div>
+    </div>
+    <div class="skg reveal">
+      <div class="skgl">Frontend & Tools</div>
+      <div class="skl">
+        <div class="ski"><span>React.js</span><div class="skb"><div class="skf" style="--p:70%"></div></div></div>
+        <div class="ski"><span>Git / GitHub</span><div class="skb"><div class="skf" style="--p:90%"></div></div></div>
+        <div class="ski"><span>Linux</span><div class="skb"><div class="skf" style="--p:80%"></div></div></div>
+        <div class="ski"><span>Raspberry Pi</span><div class="skb"><div class="skf" style="--p:85%"></div></div></div>
+      </div>
+    </div>
+    <div class="skg reveal">
+      <div class="skgl">AI / APIs</div>
+      <div class="skl">
+        <div class="ski"><span>OpenAI API</span><div class="skb"><div class="skf" style="--p:90%"></div></div></div>
+        <div class="ski"><span>Google Gemini</span><div class="skb"><div class="skf" style="--p:85%"></div></div></div>
+        <div class="ski"><span>Computer Vision</span><div class="skb"><div class="skf" style="--p:80%"></div></div></div>
+        <div class="ski"><span>Supermemory API</span><div class="skb"><div class="skf" style="--p:70%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURSEWORK ── -->
+<section id="cw">
+  <div class="sh reveal"><span class="sn">06 —</span><h2 class="st">Coursework</h2><div class="sl"></div></div>
+  <div class="cg reveal">
+    <div class="ci"><div class="cc">CSE 110</div><div class="cn">Principles of Programming</div></div>
+    <div class="ci"><div class="cc">CSE 205</div><div class="cn">Object-Oriented Program &amp; Data Structures</div></div>
+    <div class="ci"><div class="cc">CSE 240</div><div class="cn">Intro to Programming Languages</div></div>
+    <div class="ci"><div class="cc">CSE 120</div><div class="cn">Digital Design Fundamentals</div></div>
+    <div class="ci"><div class="cc">CSE 301</div><div class="cn">Computing Ethics</div></div>
+    <div class="ci"><div class="cc">MAT 243</div><div class="cn">Discrete Math Structures</div></div>
+    <div class="ci"><div class="cc">MAT 265</div><div class="cn">Calculus for Engineers I</div></div>
+    <div class="ci"><div class="cc">MAT 266</div><div class="cn">Calculus for Engineers II</div></div>
+    <div class="ci"><div class="cc">MAT 267</div><div class="cn">Calculus for Engineers III</div></div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="cbg">HELLO</div>
+  <div class="clbl reveal">07 — Get in touch</div>
+  <h2 class="ch reveal">Let's Build<br>Something.</h2>
+  <p class="cs reveal">Open to SWE internship opportunities for Summer 2026, interesting projects, or a good conversation about systems and AI.</p>
+  <a href="mailto:daher@asu.edu" class="cem reveal">daher@asu.edu</a>
+  <div class="clinks reveal">
+    <a href="https://linkedin.com/in/dhruva-aher" class="clink" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Dhruva-Aher" class="clink" target="_blank">GitHub</a>
+    <a href="resume.pdf" download="Dhruva_Aher_Resume.pdf" class="clink">Resume ↓</a>
+  </div>
+</section>
+
+<footer>
+  <span>Dhruva Aher · 2026</span>
+  <span>CS @ Arizona State University · Grand Challenges Scholars Program</span>
+  <span>(602) 750–9542</span>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const ro=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*80);ro.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+const so=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.skf').forEach(f=>f.classList.add('on'));so.unobserve(e.target);}});},{threshold:.3});
+document.querySelectorAll('.skg').forEach(g=>so.observe(g));
+</script>
+</body>
+</html>
