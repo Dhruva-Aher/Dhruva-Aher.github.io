@@ -59,12 +59,43 @@ section{padding:7rem 3rem;}
 .aci{font-size:1.4rem;flex-shrink:0;margin-top:.1rem;}
 .acl{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;}
 .act{font-size:.88rem;color:#aaa;font-weight:300;line-height:1.5;}
-#exp{background:var(--surface);}
+
+/* ─── Education ─── */
+#edu{background:var(--surface);}
+.edu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+/* left panel — matches .pc style */
+.edu-main{background:var(--bg);border:1px solid var(--border);padding:2.5rem;position:relative;overflow:hidden;transition:border-color .3s;}
+.edu-main:hover{border-color:var(--accent);}
+.edu-main::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--accent);}
+.edu-school{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;}
+.edu-deg{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.03em;line-height:1;margin-bottom:.4rem;}
+.edu-field{font-size:.9rem;color:var(--muted);font-weight:300;margin-bottom:1.5rem;}
+.edu-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.edu-badge{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;padding:.28rem .7rem;border:1px solid var(--accent);color:var(--accent);text-transform:uppercase;}
+.edu-hr{height:1px;background:var(--border);margin:1.75rem 0;}
+.edu-cw-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;}
+.edu-cw{display:flex;flex-wrap:wrap;gap:.45rem;}
+.edu-cw .tag{cursor:default;}
+/* right panel — stacked cards matching .ac2 style */
+.edu-side{display:flex;flex-direction:column;gap:1.25rem;}
+.edu-stat{background:var(--bg);border:1px solid var(--border);padding:1.35rem 1.75rem;display:flex;align-items:center;gap:1.25rem;transition:border-color .2s,transform .2s;}
+.edu-stat:hover{border-color:var(--accent);transform:translateX(4px);}
+.edu-stat-ico{font-size:1.4rem;flex-shrink:0;}
+.edu-stat-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--accent);line-height:1;}
+.edu-stat-lbl{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;}
+.edu-involve{background:var(--bg);border:1px solid var(--border);padding:1.35rem 1.75rem;flex:1;transition:border-color .2s,transform .2s;}
+.edu-involve:hover{border-color:var(--accent);transform:translateX(4px);}
+.edu-involve-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;}
+.edu-involve-list{display:flex;flex-direction:column;gap:.5rem;}
+.edu-involve-list span{font-size:.85rem;color:#888;font-weight:300;padding-left:1.2rem;position:relative;}
+.edu-involve-list span::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.72rem;top:.05rem;}
+
+#exp{background:var(--bg);}
 .tl{position:relative;padding-left:2rem;}
 .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border);}
 .ti{position:relative;padding:0 0 3.5rem 2.5rem;}
 .ti:last-child{padding-bottom:0;}
-.td{position:absolute;left:-.5rem;top:.35rem;width:1rem;height:1rem;background:var(--surface);border:2px solid var(--muted2);transition:border-color .3s,background .3s;}
+.td{position:absolute;left:-.5rem;top:.35rem;width:1rem;height:1rem;background:var(--bg);border:2px solid var(--muted2);transition:border-color .3s,background .3s;}
 .ti:hover .td{border-color:var(--accent);background:var(--accent);}
 .tdate{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:.5rem;}
 .trole{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.05em;margin-bottom:.2rem;}
@@ -127,7 +158,7 @@ section{padding:7rem 3rem;}
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;color:var(--muted2);text-transform:uppercase;}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}
 .reveal.on{opacity:1;transform:translateY(0);}
-@media(max-width:960px){nav{padding:1rem 1.5rem;}.nav-links{gap:1.25rem;}#hero{padding:0 1.5rem 4rem;}section{padding:5rem 1.5rem;}#about{grid-template-columns:1fr;gap:3rem;}.pg{grid-template-columns:1fr;}.pc.feat,.pc.wide{grid-column:span 1;grid-template-columns:1fr;}.psc{flex-direction:row;flex-wrap:wrap;gap:1.5rem;min-width:unset;}.sg{grid-template-columns:repeat(2,1fr);}.cg{grid-template-columns:repeat(2,1fr);}footer{flex-direction:column;gap:.75rem;text-align:center;}}
+@media(max-width:960px){nav{padding:1rem 1.5rem;}.nav-links{gap:1.25rem;}#hero{padding:0 1.5rem 4rem;}section{padding:5rem 1.5rem;}#about{grid-template-columns:1fr;gap:3rem;}.edu-wrap{grid-template-columns:1fr;}.pg{grid-template-columns:1fr;}.pc.feat,.pc.wide{grid-column:span 1;grid-template-columns:1fr;}.psc{flex-direction:row;flex-wrap:wrap;gap:1.5rem;min-width:unset;}.sg{grid-template-columns:repeat(2,1fr);}.cg{grid-template-columns:repeat(2,1fr);}footer{flex-direction:column;gap:.75rem;text-align:center;}}
 @media(max-width:560px){.hero-stats{gap:1.5rem;flex-wrap:wrap;}.sg,.cg{grid-template-columns:1fr;}.nav-links{display:none;}}
 </style>
 </head>
@@ -136,6 +167,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <a class="nav-logo" href="#hero">D<span>.</span>A</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#edu">Education</a></li>
     <li><a href="#exp">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#sk">Skills</a></li>
@@ -178,8 +210,76 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
+<!-- ── EDUCATION ── -->
+<section id="edu">
+  <div class="sh reveal"><span class="sn">02 —</span><h2 class="st">Education</h2><div class="sl"></div></div>
+  <div class="edu-wrap">
+
+    <!-- Left: degree + coursework -->
+    <div class="edu-main reveal">
+      <div class="edu-school">Arizona State University · Tempe, Arizona</div>
+      <div class="edu-deg">B.S. Computer Science</div>
+      <div class="edu-field">Expected May 2029</div>
+      <div class="edu-badges">
+        <span class="edu-badge">Grand Challenges Scholars</span>
+        <span class="edu-badge">Dean's List · Fall 2025</span>
+      </div>
+      <div class="edu-hr"></div>
+      <div class="edu-cw-lbl">Relevant Coursework</div>
+      <div class="edu-cw">
+        <span class="tag">CSE 110 · Principles of Programming</span>
+        <span class="tag">CSE 205 · OOP &amp; Data Structures</span>
+        <span class="tag">CSE 240 · Programming Languages</span>
+        <span class="tag">CSE 120 · Digital Design Fundamentals</span>
+        <span class="tag">CSE 301 · Computing Ethics</span>
+        <span class="tag">MAT 243 · Discrete Math Structures</span>
+        <span class="tag">MAT 265 · Calculus I</span>
+        <span class="tag">MAT 266 · Calculus II</span>
+        <span class="tag">MAT 267 · Calculus III</span>
+      </div>
+    </div>
+
+    <!-- Right: stat cards + involvement -->
+    <div class="edu-side reveal">
+      <div class="edu-stat">
+        <div class="edu-stat-ico">📈</div>
+        <div>
+          <div class="edu-stat-val">4.0 GPA</div>
+          <div class="edu-stat-lbl">Perfect Score · All Semesters</div>
+        </div>
+      </div>
+      <div class="edu-stat">
+        <div class="edu-stat-ico">🏆</div>
+        <div>
+          <div class="edu-stat-val">Dean's List</div>
+          <div class="edu-stat-lbl">Fall 2025 · First Semester</div>
+        </div>
+      </div>
+      <div class="edu-stat">
+        <div class="edu-stat-ico">🎓</div>
+        <div>
+          <div class="edu-stat-val">Aug 2025</div>
+          <div class="edu-stat-lbl">Enrolled · May 2029 Expected</div>
+        </div>
+      </div>
+      <div class="edu-involve">
+        <div class="edu-involve-lbl">Campus Involvement</div>
+        <div class="edu-involve-list">
+          <span>ACM at ASU — Industry Relations Intern</span>
+          <span>Google Developer Student Club</span>
+          <span>Hacker Devils</span>
+          <span>The AI Society</span>
+          <span>SoDA × AI Society Bootcamp</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
 <section id="exp">
-  <div class="sh reveal"><span class="sn">02 —</span><h2 class="st">Experience</h2><div class="sl"></div></div>
+  <div class="sh reveal"><span class="sn">03 —</span><h2 class="st">Experience</h2><div class="sl"></div></div>
   <div class="tl">
     <div class="ti reveal">
       <div class="td"></div>
@@ -188,38 +288,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
       <div class="torg">ACM at ASU · Hybrid · Tempe, Arizona</div>
       <div class="tdesc">Working on the Engagement Team (Industry Relations) — connecting students with industry professionals and supporting technical community events at Arizona State University.</div>
       <div class="tags"><span class="tag">Industry Relations</span><span class="tag">Community</span><span class="tag">Leadership</span></div>
-    </div>
-    <div class="ti reveal">
-      <div class="td"></div>
-      <div class="tdate">Aug 2025 — Present</div>
-      <div class="trole">B.S. Computer Science</div>
-      <div class="torg">Arizona State University · Grand Challenges Scholars Program · GPA: 4.0 · Dean's List Fall 2025 · Expected May 2029</div>
-      <div class="tdesc">Studying systems, algorithms, and applied AI. Coursework includes Data Structures & Algorithms, OOP, Discrete Math, Digital Design Fundamentals, and Principles of Programming.</div>
-      <div class="tags"><span class="tag">Expected May 2029</span><span class="tag">Dean's List</span><span class="tag">Grand Challenges Scholars</span></div>
-    </div>
-    <div class="ti reveal">
-      <div class="td"></div>
-      <div class="tdate">Sep 2025</div>
-      <div class="trole">SunHacks 2025 — Full-Stack Developer</div>
-      <div class="torg">ASU Hackathon · 36-hour build</div>
-      <ul class="tb">
-        <li>Built full-stack AI productivity assistant in 36 hours — calendar scheduling, email drafting, and task management from natural language; 50+ queries, 85%+ intent accuracy.</li>
-        <li>Flask backend with 2 REST endpoints (JSON payloads, concurrent requests); Google Gemini for intent parsing.</li>
-        <li>React.js frontend with 5+ components, state management, and real-time API response rendering.</li>
-      </ul>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React.js</span><span class="tag">Gemini API</span></div>
-    </div>
-    <div class="ti reveal">
-      <div class="td"></div>
-      <div class="tdate">Sep 2025</div>
-      <div class="trole">DevHacks 2025 — Frontend Developer</div>
-      <div class="torg">ASU Hackathon</div>
-      <ul class="tb">
-        <li>Built interactive Python Flet frontend with real-time chat and sub-1 second response latency.</li>
-        <li>Context storage logic maintaining session history across 20+ question-answer cycles with relevant follow-up generation.</li>
-        <li>Integrated Google Gemini and Supermemory APIs; processed 100+ conversation turns in testing.</li>
-      </ul>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Flet</span><span class="tag">Gemini API</span><span class="tag">Supermemory</span></div>
     </div>
     <div class="ti reveal">
       <div class="td"></div>
@@ -237,8 +305,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
+<!-- ── PROJECTS ── -->
 <section id="projects">
-  <div class="sh reveal"><span class="sn">03 —</span><h2 class="st">Projects</h2><div class="sl"></div></div>
+  <div class="sh reveal"><span class="sn">04 —</span><h2 class="st">Projects</h2><div class="sl"></div></div>
   <div class="pg">
     <div class="pc feat reveal">
       <div>
@@ -252,11 +321,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
           <li>Collaborated in a 6-person team through 8+ iterations; resolved 10+ GPIO wiring and sensor calibration issues.</li>
         </ul>
         <div class="tags" style="margin-bottom:1.5rem"><span class="tag">Python</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">OpenAI Vision API</span><span class="tag">GPIO</span><span class="tag">Linux</span></div>
-        <div class="plinks">
-         </div>
+        <div class="plinks"></div>
       </div>
-      <div class="psc">
-      </div>
+      <div class="psc"></div>
     </div>
 
     <div class="pc reveal">
@@ -286,9 +353,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         <li>Session history across 20+ question-answer cycles with relevant follow-up generation.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem"><span class="tag">Python</span><span class="tag">Flet</span><span class="tag">Gemini API</span><span class="tag">Supermemory</span></div>
-       <div class="plinks">
-         <a href="https://github.com/Dhruva-Aher/DevHacks-2025-Project" class="plink" target="_blank"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View Code</a>
-       </div>
+      <div class="plinks">
+        <a href="https://github.com/Dhruva-Aher/DevHacks-2025-Project" class="plink" target="_blank"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View Code</a>
+      </div>
     </div>
 
     <div class="pc wide reveal">
@@ -306,8 +373,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
+<!-- ── SKILLS ── -->
 <section id="sk">
-  <div class="sh reveal"><span class="sn">04 —</span><h2 class="st">Skills</h2><div class="sl"></div></div>
+  <div class="sh reveal"><span class="sn">05 —</span><h2 class="st">Skills</h2><div class="sl"></div></div>
   <div class="sg">
     <div class="skg reveal">
       <div class="skgl">Languages</div>
@@ -348,8 +416,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
+<!-- ── COURSEWORK ── -->
 <section id="cw">
-  <div class="sh reveal"><span class="sn">05 —</span><h2 class="st">Coursework</h2><div class="sl"></div></div>
+  <div class="sh reveal"><span class="sn">06 —</span><h2 class="st">Coursework</h2><div class="sl"></div></div>
   <div class="cg reveal">
     <div class="ci"><div class="cc">CSE 110</div><div class="cn">Principles of Programming</div></div>
     <div class="ci"><div class="cc">CSE 205</div><div class="cn">Object-Oriented Program &amp; Data Structures</div></div>
@@ -363,9 +432,10 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </section>
 
+<!-- ── CONTACT ── -->
 <section id="contact">
   <div class="cbg">HELLO</div>
-  <div class="clbl reveal">06 — Get in touch</div>
+  <div class="clbl reveal">07 — Get in touch</div>
   <h2 class="ch reveal">Let's Build<br>Something.</h2>
   <p class="cs reveal">Open to SWE internship opportunities for Summer 2026, interesting projects, or a good conversation about systems and AI.</p>
   <a href="mailto:daher@asu.edu" class="cem reveal">daher@asu.edu</a>
