@@ -277,8 +277,51 @@ nav.scrolled {
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10vh; /* Adjust as needed */
 }
+
+.hero-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.hero-text-content {
+  flex: 1;
+}
+
+.hero-portrait-container {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-portrait {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+  .hero-content-wrapper {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .hero-portrait {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 .hero-tag {
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -1424,28 +1467,35 @@ footer {
       <span class="status-dot"></span>
       Available for Summer 2026 SWE Internships
     </div>
-    <div style="margin: 1.5rem 0;">
-      <img src="dhruva.jpeg" alt="Dhruva Aher" style="width: 100px; height: 100px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-    </div>
-    <div class="hero-tag">CS @ Arizona State University · Tempe, AZ</div>
-    <h1 class="hero-name glitch">
-      <span class="ac">D</span>HRUVA<br>AHER
-    </h1>
-    <p class="hero-sub">
-      <span id="typewriter"></span><span class="typewriter-cursor"></span>
-    </p>
-    <div class="hero-badges">
-      <span class="hero-badge">ASU Computer Science</span>
-      <span class="hero-badge accent-badge">4.0 GPA</span>
-      <span class="hero-badge accent-badge">AWS Certified</span>
-      <span class="hero-badge">ACM Officer</span>
-      <span class="hero-badge">Summer 2026 Open</span>
-    </div>
+
     
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary btn-magnetic">View Projects ↓</a>
-      <a href="Resume.pdf" target="_blank" rel="noopener" aria-label="Download Dhruva Aher Resume PDF" class="btn btn-outline btn-magnetic">Resume ↗</a>
-      <a href="https://linkedin.com/in/dhruva-aher" target="_blank" rel="noopener" class="btn btn-outline btn-magnetic">LinkedIn ↗</a>
+    <div class="hero-content-wrapper">
+      <div class="hero-text-content">
+        <div class="hero-tag">CS @ Arizona State University · Tempe, AZ</div>
+        <h1 class="hero-name glitch">
+          <span class="ac">D</span>HRUVA<br>AHER
+        </h1>
+        <p class="hero-sub">
+          <span id="typewriter"></span><span class="typewriter-cursor"></span>
+        </p>
+        <div class="hero-badges">
+          <span class="hero-badge">ASU Computer Science</span>
+          <span class="hero-badge accent-badge">4.0 GPA</span>
+          <span class="hero-badge accent-badge">AWS Certified</span>
+          <span class="hero-badge">ACM Officer</span>
+          <span class="hero-badge">Summer 2026 Open</span>
+        </div>
+        
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary btn-magnetic">View Projects ↓</a>
+          <a href="Resume.pdf" target="_blank" rel="noopener" aria-label="Download Dhruva Aher Resume PDF" class="btn btn-outline btn-magnetic">Resume ↗</a>
+          <a href="https://linkedin.com/in/dhruva-aher" target="_blank" rel="noopener" class="btn btn-outline btn-magnetic">LinkedIn ↗</a>
+        </div>
+      </div>
+      
+      <div class="hero-portrait-container">
+        <img src="dhruva.jpg" alt="Dhruva Aher" class="hero-portrait">
+      </div>
     </div>
   </div>
   <div class="scroll-indicator">
