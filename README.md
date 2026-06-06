@@ -10,16 +10,16 @@
 
 I build software that works under real constraints.
 
-My focus is **backend systems and applied AI** — not just models, but the infrastructure around them. I care about performance, clean architecture, and systems that behave reliably outside the lab.
+My focus is **backend systems, applied AI, and agentic workflows** — not just models, but the infrastructure around them. I care about performance, clean architecture, and systems that behave reliably outside the lab.
 
 ---
 
 ## ⚙️ Core Focus
 
-- **Backend Engineering** (APIs, data flow, system logic)
-- **AI-Integrated Applications**
-- **Full-Stack Systems** (Idea → Deployment)
-- **Hardware + Software Integration**
+- **Backend Engineering** (APIs, data flow, distributed systems)
+- **AI Systems & Agentic Workflows**
+- **Full-Stack SaaS Applications**
+- **Cloud Infrastructure & Observability**
 
 ---
 
