@@ -2,7 +2,7 @@
 
 **Computer Science @ Arizona State University (4.0 GPA)**  
 📍 Tempe, AZ  
-📧 [daher@asu.edu](mailto:daher@asu.edu) | 🔗 [LinkedIn](https://linkedin.com/in/dhruva-aher) | 🌐 [Portfolio](https://Dhruva-Aher.github.io)
+📧 [dhruvaaher48@gmail.com](mailto:dhruvaaher48@gmail.com) | 🔗 [LinkedIn](https://linkedin.com/in/dhruva-aher) | 🌐 [Portfolio](https://Dhruva-Aher.github.io)
 
 ---
 
@@ -26,19 +26,19 @@ My focus is **backend systems and applied AI** — not just models, but the infr
 ## 🛠️ Toolbox
 
 **Languages**  
-`Python` • `Java` • `SQL` • `JavaScript`
+`Python` • `Java` • `SQL` • `JavaScript` • `TypeScript` • `Bash`
 
 **Backend & Frameworks**  
-`Flask` • `REST APIs` • `JSON` • `HTTP`
+`FastAPI` • `Node.js` • `Flask` • `REST APIs` • `JSON` • `HTTP`
 
 **Frontend**  
-`React` • `HTML/CSS` • `Flet`
+`Next.js` • `React` • `HTML/CSS` • `Flet`
 
 **Systems & Tools**  
-`Linux` • `Git` • `GitHub` • `MySQL` • `Raspberry Pi`
+`GCP` • `AWS` • `Docker` • `Linux` • `Git` • `GitHub` • `MySQL` • `Raspberry Pi`
 
 **AI & APIs**  
-`OpenAI` • `Google Gemini` • `Supermemory API` • `Computer Vision`
+`Google Gemini` • `Vertex AI` • `OpenAI` • `Supermemory API` • `Computer Vision`
 
 ---
 
