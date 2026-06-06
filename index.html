@@ -1438,9 +1438,7 @@ footer {
       <span class="hero-badge">ACM Officer</span>
       <span class="hero-badge">Summer 2026 Open</span>
     </div>
-    <div style="margin-top: 1.5rem; margin-bottom: -1rem; font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent); opacity: 0.9; letter-spacing: 0.5px;">
-      Currently Building → AI Systems • Distributed Infrastructure • Full-Stack Products
-    </div>
+    
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary btn-magnetic">View Projects ↓</a>
       <a href="Resume.pdf" target="_blank" rel="noopener" aria-label="Download Dhruva Aher Resume PDF" class="btn btn-outline btn-magnetic">Resume ↗</a>
@@ -1463,63 +1461,17 @@ footer {
     <div class="section-line"></div>
   </div>
 
-  <!-- Stats Strip -->
-  <div class="stats-strip reveal">
-    <div class="stat-item">
-      <div class="stat-val counter" data-target="810" data-suffix="K+">0</div>
-      <div class="stat-lbl">FEMA Records<br>Processed</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val counter" data-target="20" data-suffix="K+">0</div>
-      <div class="stat-lbl">Tasks<br>Orchestrated</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val counter" data-target="10" data-suffix="K+">0</div>
-      <div class="stat-lbl">Students<br>Reached</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val" style="font-size: clamp(1.4rem, 2.5vw, 2rem);">4.0</div>
-      <div class="stat-lbl">GPA<br>Dean's List</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val counter" data-target="2" data-suffix="">0</div>
-      <div class="stat-lbl">Cloud<br>Certifications</div>
-    </div>
-  </div>
-
   <div class="about-grid">
     <div class="about-bio reveal">
-      <p>
+            <p>
         I'm a Computer Science student at Arizona State University focused on backend systems, AI applications, and cloud infrastructure.
       </p>
       <p style="margin-bottom: 1.5rem;">
         Beyond coursework, I spend most of my time building software that handles real users, real workloads, and real engineering tradeoffs.
       </p>
-      <ul style="list-style-type: none; margin-left: 0; margin-bottom: 1.5rem; line-height: 1.6; padding-left: 0;">
-        <li style="margin-bottom: 0.5rem;">▹ Built an <strong>AI legal triage platform</strong> running model-directed pipelines.</li>
-        <li style="margin-bottom: 0.5rem;">▹ Engineered a <strong>distributed task orchestrator</strong> processing 20,000+ jobs.</li>
-        <li style="margin-bottom: 0.5rem;">▹ Shipped an <strong>AI PR review agent</strong> live on the GitHub Marketplace.</li>
-        <li style="margin-bottom: 0.5rem;">▹ Deployed an <strong>analytics pipeline</strong> over 810K+ FEMA records on AWS ECS.</li>
-      </ul>
-      <p>
-        <strong>Stack:</strong> Python, Next.js, FastAPI, Node.js, TypeScript, React, PostgreSQL, MongoDB, Redis, Docker, GCP, AWS.<br>
-        <strong>Certifications:</strong> AWS Cloud Practitioner, Azure AI Essentials.
+      <p style="margin-bottom: 2rem;">
+        Recently I've built a distributed task orchestration platform, an AI legal triage system, and a GitHub code review agent.
       </p>
-      <p>
-        I write tests, document decisions, and communicate clearly — as an ACM officer leading tech initiatives for 250+ members, I've had to. I'm seeking a <strong>Summer 2026 SWE internship</strong> where I can contribute to backend, infrastructure, or AI engineering teams from day one.
-      </p>
-      
-      <div style="margin-top: 2rem; margin-bottom: 2rem; padding: 1.25rem; border-left: 2px solid var(--accent); background: rgba(0, 255, 170, 0.05); font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.7; color: var(--text);">
-        <div style="font-weight: 700; color: #fff; margin-bottom: 0.75rem; letter-spacing: 0.5px;">BUILT WITH</div>
-        <div style="display: flex; flex-direction: column; gap: 0.25rem;">
-          <div><span style="color: var(--accent); margin-right: 0.5rem;">✓</span>20,000+ task orchestration system</div>
-          <div><span style="color: var(--accent); margin-right: 0.5rem;">✓</span>250+ automated tests</div>
-          <div><span style="color: var(--accent); margin-right: 0.5rem;">✓</span>5 Google Cloud services integrated</div>
-          <div><span style="color: var(--accent); margin-right: 0.5rem;">✓</span>ACM Coordinator</div>
-          <div><span style="color: var(--accent); margin-right: 0.5rem;">✓</span>AWS Certified</div>
-        </div>
-      </div>
-
       <blockquote class="about-quote">
         "I pick up codebases fast, ask the right questions, and care about getting things right — not just getting them done."
       </blockquote>
@@ -1574,11 +1526,233 @@ footer {
 </section>
 
 <!-- ═══════════════════════════════════════════
+     PROJECTS
+════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">02 —</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <!-- JusticeQueue - Featured -->
+    <div class="project-card featured reveal tilt-card">
+      <div>
+        <div class="project-num">01 / Featured · 2025–2026</div>
+        <h3 class="project-title">JusticeQueue</h3>
+        <p class="project-ctx">AI Legal Triage Platform</p>
+        <ul class="project-bullets">
+          <li>Engineered a <strong>13-step model-directed pipeline</strong> featuring <strong>8 model decisions per run</strong> (tool selection, resource allocation, and self-critique).</li>
+          <li>Integrated <strong>5 Google Cloud services</strong> (Vertex AI, Cloud Logging, Cloud Monitoring) securely via <strong>OAuth 2.0 + Firebase Auth</strong>.</li>
+          <li>Persisted typed evidence documents using <strong>MongoDB Atlas Vector Search</strong>; deployed on Vercel with Upstash Redis rate limiting.</li>
+        </ul>
+        <div class="tags" style="margin-bottom:1.5rem">
+          <span class="tag">Next.js 14</span><span class="tag">Vertex AI</span><span class="tag">Gemini API</span><span class="tag">MongoDB Atlas</span><span class="tag">Upstash Redis</span><span class="tag">Firebase</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Dhruva-Aher/JusticeQueue" aria-label="View JusticeQueue Source Code" class="project-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View Code
+          </a>
+          <a href="https://justicequeuelive.vercel.app" aria-label="View JusticeQueue Live Demo" class="project-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+      <div class="project-metrics">
+        <div>
+          <div class="metric-val">13</div>
+          <div class="metric-label">Step Pipeline</div>
+        </div>
+        <div>
+          <div class="metric-val">5</div>
+          <div class="metric-label">GCP Services</div>
+        </div>
+        <div>
+          <div class="metric-val">8</div>
+          <div class="metric-label">Decisions / Run</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AURA -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">02 · 2025–2026</div>
+      <h3 class="project-title">Aura</h3>
+      <p class="project-ctx">Distributed Task Orchestration Platform</p>
+      <ul class="project-bullets">
+        <li>Engineered a distributed job scheduling system handling <strong>20,000+ concurrent tasks</strong> with priority queues and <strong>worker crash detection</strong>.</li>
+        <li>Implemented <strong>safe job leasing</strong> with Redis to prevent duplicate execution, sustaining 300 jobs/min under peak load with P95 latency of 6.5s.</li>
+        <li>Wrote <strong>250 unit tests</strong> covering concurrency failures and edge cases; validated crash recovery restoring <strong>6,000+ jobs</strong> in under 2 seconds.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/Aura" aria-label="View Aura Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+        <a href="https://aurasys.vercel.app" aria-label="View Aura Live Demo" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
+          Live Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- FlowBoard -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">03 · Full-Stack SaaS · Apr 2026</div>
+      <h3 class="project-title">FlowBoard</h3>
+      <p class="project-ctx">Multi-Tenant SaaS Platform</p>
+      <ul class="project-bullets">
+        <li>Engineered a <strong>multi-tenant SaaS platform</strong> with fully isolated workspaces, RBAC, and real-time collaborative editing.</li>
+        <li>Designed RESTful backend with FastAPI and async PostgreSQL; implemented JWT authentication, Alembic schema migrations.</li>
+        <li>Engineered real-time state sync via WebSockets + Redis and optimistic UI updates via TanStack Query and Zustand.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">WebSockets</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/FlowBoard" aria-label="View FlowBoard Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- PRBeliefs -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">04 · GitHub Marketplace · Apr 2026</div>
+      <h3 class="project-title">PRBeliefs</h3>
+      <p class="project-ctx">Automated Code Review Tool · GitHub Marketplace</p>
+      <ul class="project-bullets">
+        <li>Shipped an <strong>automated code review agent</strong> to the GitHub Marketplace, delivering parallelized, structured feedback in under 1 second per PR.</li>
+        <li>Designed a robust webhook ingestion pipeline decoupled from review processing using Redis-backed async queues to handle burst traffic gracefully.</li>
+        <li>Deployed with Docker Compose and GitHub Actions CI with automated testing on every push and per-installation rate limiting.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Python</span><span class="tag">Redis</span><span class="tag">SQLite</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/ReviewAgent" aria-label="View PRBeliefs Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+        <a href="https://github.com/apps/prbeliefs" aria-label="View PRBeliefs on GitHub Marketplace" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809v6.442zm13-8.181L8 7.21 1.5 4.07v-.32a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v.32z"/></svg>
+          Marketplace
+        </a>
+      </div>
+    </div>
+
+    <!-- Disaster Relief -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">05 · Analytics · Apr 2026</div>
+      <h3 class="project-title">Disaster Relief Tracker</h3>
+      <p class="project-ctx">FEMA Response Gap Analytics Dashboard</p>
+      <ul class="project-bullets">
+        <li>Processed and analyzed <strong>810K+ FEMA disaster relief records across 3,000+ counties</strong> to surface gaps in federal aid distribution.</li>
+        <li>ETL pipeline joining FEMA disbursements with U.S. Census income data revealed a weak aid-to-income correlation (r = 0.16) — a finding with real policy implications.</li>
+        <li>Deployed on <strong>AWS ECS + RDS + CloudFront</strong> via Terraform with Redis caching; infrastructure is reproducible and version-controlled.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS ECS</span><span class="tag">Redis</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/Disaster-Relief-Response-Gap-Tracker-DRRGT-" aria-label="View Disaster Relief Tracker Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- LaundryLens -->
+    <div class="project-card wide reveal tilt-card">
+      <div class="project-num">06 · Assistive Tech · Aug–Dec 2025 · ASU FSE 100</div>
+      <h3 class="project-title">LaundryLens</h3>
+      <p class="project-ctx">Assistive Computer Vision Wearable · Associated with Arizona State University</p>
+      <ul class="project-bullets" style="max-width:700px">
+        <li>Achieved <strong>90%+ clothing attribute classification accuracy</strong> across 15+ categories on a Raspberry Pi — providing real-time audio feedback to visually impaired users.</li>
+        <li>End-to-end latency under 2 seconds: button press → OpenAI Vision API → text-to-speech output, with optimized GPIO controls and hardware-level tuning.</li>
+        <li>Led technical integration across a 6-person team through 8+ build iterations; debugged 10+ GPIO wiring and sensor calibration issues to ship a working physical device.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:0">
+        <span class="tag">Python</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">OpenAI Vision API</span><span class="tag">GPIO</span><span class="tag">Linux</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════ -->
+<section id="exp">
+  <div class="section-header reveal">
+    <span class="section-num">03 —</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item has-logo reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Mar 2026 — Present</div>
+      <div class="timeline-head">
+        <a class="exp-logo-box" href="https://students.engineering.asu.edu/clubs/acm-student-chapter-at-asu/" target="_blank" rel="noopener" aria-label="ACM at ASU">
+          <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#0277BD"/>
+            <text x="32" y="42" font-family="Arial,sans-serif" font-weight="900" font-size="26" fill="white" text-anchor="middle" letter-spacing="-1">ACM</text>
+          </svg>
+        </a>
+        <div>
+          <div class="timeline-role">Coordinator</div>
+          <div class="timeline-org">ACM at ASU · Hybrid · Tempe, Arizona</div>
+        </div>
+      </div>
+      <ul class="timeline-list">
+        <li>Coordinated GlobeHacks 2026 (ACM x GCN) end-to-end; managed Devpost configuration, real-time Discord announcements, and participant support for <strong>250+ attendees</strong> across technical and non-technical tracks including a Google-hosted workshop session.</li>
+        <li>Manage ACM's Discord community of <strong>250+ members</strong>; facilitate recurring technical workshops and speaker sessions on AI, distributed systems, and industry topics attended by 30–40 students per session.</li>
+      </ul>
+      <div class="tags" style="margin-top:1rem"><span class="tag">Administration Technology</span><span class="tag">Community Leadership</span><span class="tag">Hackathon Ops</span></div>
+    </div>
+
+    <div class="timeline-item has-logo reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jun 2022 — Jun 2023</div>
+      <div class="timeline-head">
+        <a class="exp-logo-box" href="https://lifology.com" target="_blank" rel="noopener" aria-label="Lifology">
+          <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="8" fill="#1a1a2e"/>
+            <text x="32" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e94560" text-anchor="middle" letter-spacing="0.5">LIFO</text>
+            <text x="32" y="51" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#a0a0b0" text-anchor="middle" letter-spacing="1">LOGY</text>
+          </svg>
+        </a>
+        <div>
+          <div class="timeline-role">Youth Ambassador</div>
+          <div class="timeline-org">Lifology | Designing Lives · Remote · India</div>
+        </div>
+      </div>
+      <ul class="timeline-list">
+        <li>Coordinated STEM outreach reaching <strong>10,000+ students</strong> across India through virtual workshops and career readiness programs across <strong>27,000 schools</strong>.</li>
+        <li>Organized sessions with professionals from NASA, the United Nations, and Google Cloud — managed scheduling, communications, and logistics end-to-end.</li>
+        <li>Project selected for the National Guidance Festival 2022 (CBSE-Lifology, NEP 2020 initiative), recognizing program impact at a national level.</li>
+      </ul>
+      <div class="tags" style="margin-top:1rem"><span class="tag">Leadership</span><span class="tag">Program Management</span><span class="tag">Education</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
      EDUCATION
 ════════════════════════════════════════════ -->
 <section id="edu">
   <div class="section-header reveal">
-    <span class="section-num">02 —</span>
+    <span class="section-num">04 —</span>
     <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
@@ -1636,7 +1810,7 @@ footer {
       <div class="edu-involvement">
         <div class="edu-involvement-label">Campus Involvement</div>
         <div class="involvement-list">
-          <div class="involvement-item">ACM at ASU — Officer (Administration)</div>
+          <div class="involvement-item">ACM Coordinator</div>
           <div class="involvement-item">Google Developer Student Club</div>
           <div class="involvement-item">Hacker Devils — Hackathon Team</div>
           <div class="involvement-item">The AI Society</div>
@@ -1644,234 +1818,6 @@ footer {
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     EXPERIENCE
-════════════════════════════════════════════ -->
-<section id="exp">
-  <div class="section-header reveal">
-    <span class="section-num">03 —</span>
-    <h2 class="section-title">Experience</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="timeline">
-
-    <div class="timeline-item has-logo reveal">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Mar 2026 — Present</div>
-      <div class="timeline-head">
-        <a class="exp-logo-box" href="https://students.engineering.asu.edu/clubs/acm-student-chapter-at-asu/" target="_blank" rel="noopener" aria-label="ACM at ASU">
-          <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#0277BD"/>
-            <text x="32" y="42" font-family="Arial,sans-serif" font-weight="900" font-size="26" fill="white" text-anchor="middle" letter-spacing="-1">ACM</text>
-          </svg>
-        </a>
-        <div>
-          <div class="timeline-role">Coordinator, Administration</div>
-          <div class="timeline-org">ACM at ASU · Hybrid · Tempe, Arizona</div>
-        </div>
-      </div>
-      <ul class="timeline-list">
-        <li>Coordinated GlobeHacks 2026 (ACM x GCN) end-to-end; managed Devpost configuration, real-time Discord announcements, and participant support for <strong>250+ attendees</strong> across technical and non-technical tracks including a Google-hosted workshop session.</li>
-        <li>Manage ACM's Discord community of <strong>250+ members</strong>; facilitate recurring technical workshops and speaker sessions on AI, distributed systems, and industry topics attended by 30–40 students per session.</li>
-      </ul>
-      <div class="tags" style="margin-top:1rem"><span class="tag">Administration Technology</span><span class="tag">Community Leadership</span><span class="tag">Hackathon Ops</span></div>
-    </div>
-
-    <div class="timeline-item has-logo reveal">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Jun 2022 — Jun 2023</div>
-      <div class="timeline-head">
-        <a class="exp-logo-box" href="https://lifology.com" target="_blank" rel="noopener" aria-label="Lifology">
-          <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#1a1a2e"/>
-            <text x="32" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e94560" text-anchor="middle" letter-spacing="0.5">LIFO</text>
-            <text x="32" y="51" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#a0a0b0" text-anchor="middle" letter-spacing="1">LOGY</text>
-          </svg>
-        </a>
-        <div>
-          <div class="timeline-role">Youth Ambassador</div>
-          <div class="timeline-org">Lifology | Designing Lives · Remote · India</div>
-        </div>
-      </div>
-      <ul class="timeline-list">
-        <li>Coordinated STEM outreach reaching <strong>10,000+ students</strong> across India through virtual workshops and career readiness programs across <strong>27,000 schools</strong>.</li>
-        <li>Organized sessions with professionals from NASA, the United Nations, and Google Cloud — managed scheduling, communications, and logistics end-to-end.</li>
-        <li>Project selected for the National Guidance Festival 2022 (CBSE-Lifology, NEP 2020 initiative), recognizing program impact at a national level.</li>
-      </ul>
-      <div class="tags" style="margin-top:1rem"><span class="tag">Leadership</span><span class="tag">Program Management</span><span class="tag">Education</span></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     PROJECTS
-════════════════════════════════════════════ -->
-<section id="projects">
-  <div class="section-header reveal">
-    <span class="section-num">04 —</span>
-    <h2 class="section-title">Projects</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="projects-grid">
-
-    <!-- JusticeQueue - Featured -->
-    <div class="project-card featured reveal tilt-card">
-      <div>
-        <div class="project-num">01 / Featured · 2025–2026</div>
-        <span class="project-icon" aria-hidden="true">⚖️</span>
-        <h3 class="project-title">JusticeQueue</h3>
-        <p class="project-ctx">AI Legal Triage Platform</p>
-        <ul class="project-bullets">
-          <li>Engineered a <strong>13-step model-directed pipeline</strong> featuring <strong>8 model decisions per run</strong> (tool selection, resource allocation, and self-critique).</li>
-          <li>Integrated <strong>5 Google Cloud services</strong> (Vertex AI, Cloud Logging, Cloud Monitoring) securely via <strong>OAuth 2.0 + Firebase Auth</strong>.</li>
-          <li>Persisted typed evidence documents using <strong>MongoDB Atlas Vector Search</strong>; deployed on Vercel with Upstash Redis rate limiting.</li>
-        </ul>
-        <div class="tags" style="margin-bottom:1.5rem">
-          <span class="tag">Next.js 14</span><span class="tag">Vertex AI</span><span class="tag">Gemini API</span><span class="tag">MongoDB Atlas</span><span class="tag">Upstash Redis</span><span class="tag">Firebase</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Dhruva-Aher/JusticeQueue" aria-label="View JusticeQueue Source Code" class="project-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View Code
-          </a>
-          <a href="https://justicequeuelive.vercel.app" aria-label="View JusticeQueue Live Demo" class="project-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
-            Live Demo
-          </a>
-        </div>
-      </div>
-      <div class="project-metrics">
-        <div>
-          <div class="metric-val">13</div>
-          <div class="metric-label">Step Pipeline</div>
-        </div>
-        <div>
-          <div class="metric-val">5</div>
-          <div class="metric-label">GCP Services</div>
-        </div>
-        <div>
-          <div class="metric-val">8</div>
-          <div class="metric-label">Decisions / Run</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- AURA -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">02 · 2025–2026</div>
-      <span class="project-icon" aria-hidden="true">⚡</span>
-      <h3 class="project-title">Aura</h3>
-      <p class="project-ctx">Distributed Task Orchestration Platform</p>
-      <ul class="project-bullets">
-        <li>Engineered a distributed job scheduling system handling <strong>20,000+ concurrent tasks</strong> with priority queues and <strong>worker crash detection</strong>.</li>
-        <li>Implemented <strong>safe job leasing</strong> with Redis to prevent duplicate execution, sustaining 300 jobs/min under peak load with P95 latency of 6.5s.</li>
-        <li>Wrote <strong>250 unit tests</strong> covering concurrency failures and edge cases; validated crash recovery restoring <strong>6,000+ jobs</strong> in under 2 seconds.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/Aura" aria-label="View Aura Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-        <a href="https://aurasys.vercel.app" aria-label="View Aura Live Demo" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
-          Live Demo
-        </a>
-      </div>
-    </div>
-
-    <!-- FlowBoard -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">03 · Full-Stack SaaS · Apr 2026</div>
-      <span class="project-icon" aria-hidden="true">📋</span>
-      <h3 class="project-title">FlowBoard</h3>
-      <p class="project-ctx">Multi-Tenant SaaS Platform</p>
-      <ul class="project-bullets">
-        <li>Engineered a <strong>multi-tenant SaaS platform</strong> with fully isolated workspaces, RBAC, and real-time collaborative editing.</li>
-        <li>Designed RESTful backend with FastAPI and async PostgreSQL; implemented JWT authentication, Alembic schema migrations.</li>
-        <li>Engineered real-time state sync via WebSockets + Redis and optimistic UI updates via TanStack Query and Zustand.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">WebSockets</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/FlowBoard" aria-label="View FlowBoard Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-      </div>
-    </div>
-
-    <!-- PRBeliefs -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">04 · GitHub Marketplace · Apr 2026</div>
-      <span class="project-icon" aria-hidden="true">🤖</span>
-      <h3 class="project-title">PRBeliefs</h3>
-      <p class="project-ctx">Automated Code Review Tool · GitHub Marketplace</p>
-      <ul class="project-bullets">
-        <li>Shipped an <strong>automated code review agent</strong> to the GitHub Marketplace, delivering parallelized, structured feedback in under 1 second per PR.</li>
-        <li>Designed a robust webhook ingestion pipeline decoupled from review processing using Redis-backed async queues to handle burst traffic gracefully.</li>
-        <li>Deployed with Docker Compose and GitHub Actions CI with automated testing on every push and per-installation rate limiting.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Python</span><span class="tag">Redis</span><span class="tag">SQLite</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/ReviewAgent" aria-label="View PRBeliefs Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-        <a href="https://github.com/apps/prbeliefs" aria-label="View PRBeliefs on GitHub Marketplace" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809v6.442zm13-8.181L8 7.21 1.5 4.07v-.32a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v.32z"/></svg>
-          Marketplace
-        </a>
-      </div>
-    </div>
-
-    <!-- Disaster Relief -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">05 · Analytics · Apr 2026</div>
-      <span class="project-icon" aria-hidden="true">🗺️</span>
-      <h3 class="project-title">Disaster Relief Tracker</h3>
-      <p class="project-ctx">FEMA Response Gap Analytics Dashboard</p>
-      <ul class="project-bullets">
-        <li>Processed and analyzed <strong>810K+ FEMA disaster relief records across 3,000+ counties</strong> to surface gaps in federal aid distribution.</li>
-        <li>ETL pipeline joining FEMA disbursements with U.S. Census income data revealed a weak aid-to-income correlation (r = 0.16) — a finding with real policy implications.</li>
-        <li>Deployed on <strong>AWS ECS + RDS + CloudFront</strong> via Terraform with Redis caching; infrastructure is reproducible and version-controlled.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS ECS</span><span class="tag">Redis</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/Disaster-Relief-Response-Gap-Tracker-DRRGT-" aria-label="View Disaster Relief Tracker Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-      </div>
-    </div>
-
-    <!-- LaundryLens -->
-    <div class="project-card wide reveal tilt-card">
-      <div class="project-num">06 · Assistive Tech · Aug–Dec 2025 · ASU FSE 100</div>
-      <span class="project-icon" aria-hidden="true">👕</span>
-      <h3 class="project-title">LaundryLens</h3>
-      <p class="project-ctx">Assistive Computer Vision Wearable · Associated with Arizona State University</p>
-      <ul class="project-bullets" style="max-width:700px">
-        <li>Achieved <strong>90%+ clothing attribute classification accuracy</strong> across 15+ categories on a Raspberry Pi — providing real-time audio feedback to visually impaired users.</li>
-        <li>End-to-end latency under 2 seconds: button press → OpenAI Vision API → text-to-speech output, with optimized GPIO controls and hardware-level tuning.</li>
-        <li>Led technical integration across a 6-person team through 8+ build iterations; debugged 10+ GPIO wiring and sensor calibration issues to ship a working physical device.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:0">
-        <span class="tag">Python</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">OpenAI Vision API</span><span class="tag">GPIO</span><span class="tag">Linux</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1979,7 +1925,7 @@ footer {
   <!-- Certifications inline -->
   <div style="margin-top:3rem">
     <div class="section-header reveal" style="margin-bottom:2.5rem;">
-      <span class="section-num">06 —</span>
+      <span class="section-num">05 —</span>
       <h2 class="section-title">Certifications</h2>
       <div class="section-line"></div>
     </div>
