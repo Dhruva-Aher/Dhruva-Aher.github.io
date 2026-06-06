@@ -286,25 +286,26 @@ nav.scrolled {
 .hero-content-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 3.5rem;
+  justify-content: space-between;
+  gap: 2rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 .hero-text-content {
-  flex: 0 1 auto;
+  flex: 1;
+  z-index: 2;
 }
 
 .hero-portrait-container {
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1;
+  margin-right: -2rem; /* Slight overlap effect outside the strict grid */
 }
 
 .hero-portrait {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 300px;
   object-fit: cover;
   border-radius: 16px;
 }
