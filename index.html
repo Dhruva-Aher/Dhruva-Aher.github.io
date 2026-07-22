@@ -1832,8 +1832,15 @@ footer {
       <div class="timeline-head">
         <a class="exp-logo-box" href="https://students.engineering.asu.edu/clubs/acm-student-chapter-at-asu/" target="_blank" rel="noopener" aria-label="ACM at ASU">
           <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#0277BD"/>
-            <text x="32" y="42" font-family="Arial,sans-serif" font-weight="900" font-size="26" fill="white" text-anchor="middle" letter-spacing="-1">ACM</text>
+            <rect width="64" height="64" rx="10" fill="url(#acm-grad)"/>
+            <defs>
+              <linearGradient id="acm-grad" x1="0" y1="0" x2="64" y2="64">
+                <stop offset="0%" stop-color="#0085CA"/>
+                <stop offset="100%" stop-color="#005A9C"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 12L48 22V42L32 52L16 42V22L32 12Z" stroke="white" stroke-width="2.5" fill="none" opacity="0.4"/>
+            <text x="32" y="39" font-family="'JetBrains Mono', monospace" font-weight="900" font-size="18" fill="white" text-anchor="middle" letter-spacing="-0.5">ACM</text>
           </svg>
         </a>
         <div>
@@ -1854,9 +1861,9 @@ footer {
       <div class="timeline-head">
         <a class="exp-logo-box" href="https://lifology.com" target="_blank" rel="noopener" aria-label="Lifology">
           <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="64" height="64" rx="8" fill="#1a1a2e"/>
-            <text x="32" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#e94560" text-anchor="middle" letter-spacing="0.5">LIFO</text>
-            <text x="32" y="51" font-family="Arial,sans-serif" font-weight="700" font-size="10" fill="#a0a0b0" text-anchor="middle" letter-spacing="1">LOGY</text>
+            <rect width="64" height="64" rx="10" fill="#0F172A"/>
+            <path d="M20 44V20L32 32L44 20V44" stroke="#F43F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="18" r="4" fill="#38BDF8"/>
           </svg>
         </a>
         <div>
@@ -1887,7 +1894,13 @@ footer {
   <div class="edu-grid">
     <div class="edu-card reveal">
       <div class="edu-banner">
-        <div class="edu-banner-logo">ASU</div>
+        <div class="edu-banner-logo" style="background:#8C1D40; border:1px solid #FFC627; display:flex; align-items:center; justify-content:center; border-radius:6px; padding:3px;">
+          <svg viewBox="0 0 100 100" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 12L34 38H44V82H56V38H66L50 12Z" fill="#FFC627"/>
+            <path d="M28 28L18 45H26V68H34V45H37L28 28Z" fill="#FFC627"/>
+            <path d="M72 28L63 45H66V68H74V45H82L72 28Z" fill="#FFC627"/>
+          </svg>
+        </div>
         <div>
           <div class="edu-banner-text">Arizona State University</div>
           <div class="edu-banner-text" style="color:rgba(255,255,255,0.45);font-size:0.55rem;margin-top:2px;">Tempe, Arizona · Grand Challenges Scholars Program</div>
