@@ -989,6 +989,7 @@ section {
 
 .project-image {
   width: 100%;
+  aspect-ratio: 16 / 9;
   margin: 1.25rem 0;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -997,7 +998,7 @@ section {
 }
 .project-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.4s ease;
@@ -1611,33 +1612,31 @@ footer {
   </div>
   <div class="projects-grid">
 
-    <!-- JusticeQueue - Featured -->
-    <div class="project-card featured reveal tilt-card">
-      <div>
-        <div class="project-num">01 / Featured · 2025–2026</div>
-        <h3 class="project-title">JusticeQueue</h3>
-        <p class="project-ctx">AI Legal Triage Platform</p>
-        <div class="project-image">
-          <img src="justicequeue.png" alt="JusticeQueue AI Legal Triage Interface" loading="lazy">
-        </div>
-        <ul class="project-bullets">
-          <li>Engineered a <strong>13-step model-directed pipeline</strong> featuring <strong>Gemini Flash making 8 decisions per run</strong> (tool selection, resource allocation, and self-critique).</li>
-          <li>Integrated <strong>Vertex AI + Cloud Logging/Monitoring</strong> services securely via <strong>OAuth 2.0 + Firebase Auth</strong>.</li>
-          <li>Persisted typed evidence documents using <strong>MongoDB Atlas Vector Search</strong>; deployed on Vercel with Upstash Redis rate limiting.</li>
-        </ul>
-        <div class="tags" style="margin-bottom:1.5rem">
-          <span class="tag">Next.js 14</span><span class="tag">Vertex AI</span><span class="tag">Gemini API</span><span class="tag">MongoDB Atlas</span><span class="tag">Upstash Redis</span><span class="tag">Firebase</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Dhruva-Aher/JusticeQueue" aria-label="View JusticeQueue Source Code" class="project-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            View Code
-          </a>
-          <a href="https://justicequeuelive.vercel.app" aria-label="View JusticeQueue Live Demo" class="project-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
-            Live Demo
-          </a>
-        </div>
+    <!-- JusticeQueue -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">01 · Featured · 2025–2026</div>
+      <h3 class="project-title">JusticeQueue</h3>
+      <p class="project-ctx">AI Legal Triage Platform</p>
+      <div class="project-image">
+        <img src="justicequeue.png" alt="JusticeQueue AI Legal Triage Interface" loading="lazy">
+      </div>
+      <ul class="project-bullets">
+        <li>Engineered a <strong>13-step model-directed pipeline</strong> featuring <strong>Gemini Flash making 8 decisions per run</strong> (tool selection, resource allocation, and self-critique).</li>
+        <li>Integrated <strong>Vertex AI + Cloud Logging/Monitoring</strong> services securely via <strong>OAuth 2.0 + Firebase Auth</strong>.</li>
+        <li>Persisted typed evidence documents using <strong>MongoDB Atlas Vector Search</strong>; deployed on Vercel with Upstash Redis rate limiting.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Next.js 14</span><span class="tag">Vertex AI</span><span class="tag">Gemini API</span><span class="tag">MongoDB Atlas</span><span class="tag">Upstash Redis</span><span class="tag">Firebase</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/JusticeQueue" aria-label="View JusticeQueue Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+        <a href="https://justicequeuelive.vercel.app" aria-label="View JusticeQueue Live Demo" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
+          Live Demo
+        </a>
       </div>
       <div class="project-metrics">
         <div>
