@@ -12,13 +12,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhruva Aher — Software Engineer | Backend · AI · Cloud | ASU CS</title>
-<meta name="description" content="Dhruva Aher — ASU Computer Science student (4.0 GPA) building production-grade backend systems, cloud infrastructure, and AI applications. AWS Certified. Seeking Summer 2026 SWE Internships.">
-<meta name="keywords" content="Dhruva Aher, software engineer intern, backend engineer, full-stack developer, AI engineer, ASU computer science, Arizona State University, summer 2026 internship, AWS certified">
+<meta name="description" content="Dhruva Aher — ASU Computer Science student (4.0 GPA) building production-grade backend systems, cloud infrastructure, and AI applications. AWS Certified. Seeking Fall 2026 SWE Internships.">
+<meta name="keywords" content="Dhruva Aher, software engineer intern, backend engineer, full-stack developer, AI engineer, ASU computer science, Arizona State University, fall 2026 internship, AWS certified">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a0a0a">
 <meta property="og:site_name" content="Dhruva Aher">
 <meta property="og:title" content="Dhruva Aher — Software Engineer | Backend · AI · Cloud">
-<meta property="og:description" content="ASU CS student (4.0 GPA) shipping distributed systems, cloud infrastructure, and AI applications. AWS Certified. Seeking Summer 2026 SWE Internships.">
+<meta property="og:description" content="ASU CS student (4.0 GPA) shipping distributed systems, cloud infrastructure, and AI applications. AWS Certified. Seeking Fall 2026 SWE Internships.">
 <meta name="author" content="Dhruva Aher">
 <link rel="canonical" href="https://dhruva-aher.github.io/">
 <script type="application/ld+json">
@@ -987,6 +987,25 @@ section {
 }
 .project-card.wide { grid-column: span 2; }
 
+.project-image {
+  width: 100%;
+  margin: 1.25rem 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg2);
+}
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.project-card:hover .project-image img {
+  transform: scale(1.02);
+}
+
 .project-num {
   font-family: var(--mono);
   font-size: 0.62rem;
@@ -1467,7 +1486,7 @@ footer {
   <div class="hero-inner">
     <div class="hero-status">
       <span class="status-dot"></span>
-      Available for Summer 2026 SWE Internships
+      Available for Fall 2026 SWE Internships
     </div>
 
     
@@ -1485,7 +1504,7 @@ footer {
           <span class="hero-badge accent-badge">4.0 GPA</span>
           <span class="hero-badge accent-badge">AWS Certified</span>
           <span class="hero-badge">ACM Officer</span>
-          <span class="hero-badge">Summer 2026 Open</span>
+          <span class="hero-badge">Fall 2026 Open</span>
         </div>
         
         <div class="hero-actions">
@@ -1598,8 +1617,8 @@ footer {
         <h3 class="project-title">JusticeQueue</h3>
         <p class="project-ctx">AI Legal Triage Platform</p>
         <ul class="project-bullets">
-          <li>Engineered a <strong>13-step model-directed pipeline</strong> featuring <strong>8 model decisions per run</strong> (tool selection, resource allocation, and self-critique).</li>
-          <li>Integrated <strong>5 Google Cloud services</strong> (Vertex AI, Cloud Logging, Cloud Monitoring) securely via <strong>OAuth 2.0 + Firebase Auth</strong>.</li>
+          <li>Engineered a <strong>13-step model-directed pipeline</strong> featuring <strong>Gemini Flash making 8 decisions per run</strong> (tool selection, resource allocation, and self-critique).</li>
+          <li>Integrated <strong>Vertex AI + Cloud Logging/Monitoring</strong> services securely via <strong>OAuth 2.0 + Firebase Auth</strong>.</li>
           <li>Persisted typed evidence documents using <strong>MongoDB Atlas Vector Search</strong>; deployed on Vercel with Upstash Redis rate limiting.</li>
         </ul>
         <div class="tags" style="margin-bottom:1.5rem">
@@ -1632,15 +1651,59 @@ footer {
       </div>
     </div>
 
+    <!-- RedisLite -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">02 · 2026</div>
+      <h3 class="project-title">RedisLite</h3>
+      <p class="project-ctx">Redis-Compatible Key-Value Store in Go</p>
+      <ul class="project-bullets">
+        <li>Engineered a Redis-compatible key-value store in <strong>Go</strong> implementing the <strong>RESP protocol over TCP</strong>.</li>
+        <li>Delivers <strong>75K+ ops/sec</strong> throughput with <strong>sub-millisecond P95 latency</strong>.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Go</span><span class="tag">RESP Protocol</span><span class="tag">TCP</span><span class="tag">Concurrency</span><span class="tag">Key-Value Store</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/RedisLite" aria-label="View RedisLite Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- Receipts -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">03 · OpenAI Build Week · 2026</div>
+      <h3 class="project-title">Receipts</h3>
+      <p class="project-ctx">AI Agent Claim Verification Tool</p>
+      <ul class="project-bullets">
+        <li>Built an AI agent claim verification tool at <strong>OpenAI Build Week</strong> using <strong>React, Node.js, Codex CLI, and GPT-5.6</strong>.</li>
+        <li>Verifies coding-agent completion claims against real repository evidence, producing <strong>MERGE / FIX / ESCALATE</strong> verdicts.</li>
+        <li>Validated with <strong>19 passing pipeline tests</strong>.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Codex CLI</span><span class="tag">GPT-5.6</span><span class="tag">AI Agents</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/Receipts" aria-label="View Receipts Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+      </div>
+    </div>
+
     <!-- AURA -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">02 · 2025–2026</div>
+      <div class="project-num">04 · 2025–2026</div>
       <h3 class="project-title">Aura</h3>
       <p class="project-ctx">Distributed Task Orchestration Platform</p>
+      <div class="project-image">
+        <img src="aura.png" alt="Aura Distributed Task Orchestration Architecture" loading="lazy">
+      </div>
       <ul class="project-bullets">
         <li>Engineered a distributed job scheduling system handling <strong>20,000+ concurrent tasks</strong> with priority queues and <strong>worker crash detection</strong>.</li>
-        <li>Implemented <strong>safe job leasing</strong> with Redis to prevent duplicate execution, sustaining 300 jobs/min under peak load with P95 latency of 6.5s.</li>
-        <li>Wrote <strong>250 unit tests</strong> covering concurrency failures and edge cases; validated crash recovery restoring <strong>6,000+ jobs</strong> in under 2 seconds.</li>
+        <li>Implemented <strong>safe job leasing</strong> with Redis to prevent duplicate execution, sustaining <strong>300 jobs/min</strong> under peak load with <strong>P95 latency of 6.5s</strong>.</li>
+        <li>Wrote <strong>250 unit tests</strong> covering concurrency failures and edge cases; validated <strong>crash recovery restoring 6,000+ jobs in under 2 seconds</strong>.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
@@ -1659,9 +1722,12 @@ footer {
 
     <!-- FlowBoard -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">03 · Full-Stack SaaS · Apr 2026</div>
+      <div class="project-num">05 · Full-Stack SaaS · Apr 2026</div>
       <h3 class="project-title">FlowBoard</h3>
       <p class="project-ctx">Multi-Tenant SaaS Platform</p>
+      <div class="project-image">
+        <img src="flowboard.png" alt="FlowBoard Multi-Tenant SaaS Interface" loading="lazy">
+      </div>
       <ul class="project-bullets">
         <li>Engineered a <strong>multi-tenant SaaS platform</strong> with fully isolated workspaces, RBAC, and real-time collaborative editing.</li>
         <li>Designed RESTful backend with FastAPI and async PostgreSQL; implemented JWT authentication, Alembic schema migrations.</li>
@@ -1680,13 +1746,16 @@ footer {
 
     <!-- PRBeliefs -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">04 · GitHub Marketplace · Apr 2026</div>
+      <div class="project-num">06 · GitHub Marketplace · Apr 2026</div>
       <h3 class="project-title">PRBeliefs</h3>
       <p class="project-ctx">Automated Code Review Tool · GitHub Marketplace</p>
+      <div class="project-image">
+        <img src="prbeliefs.png" alt="PRBeliefs AI Code Review Interface" loading="lazy">
+      </div>
       <ul class="project-bullets">
-        <li>Shipped an <strong>automated code review agent</strong> to the GitHub Marketplace, delivering parallelized, structured feedback in under 1 second per PR.</li>
-        <li>Designed a robust webhook ingestion pipeline decoupled from review processing using Redis-backed async queues to handle burst traffic gracefully.</li>
-        <li>Deployed with Docker Compose and GitHub Actions CI with automated testing on every push and per-installation rate limiting.</li>
+        <li>Shipped an automated code review agent as a <strong>GitHub Marketplace app</strong>, delivering parallelized, structured feedback in under 1 second per PR.</li>
+        <li>Designed a robust webhook ingestion pipeline decoupled from review processing using a <strong>Redis-backed async queue</strong> to handle burst traffic gracefully.</li>
+        <li>Deployed with Docker Compose and GitHub Actions CI with automated testing on every push and <strong>per-installation rate limiting</strong>.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Python</span><span class="tag">Redis</span><span class="tag">SQLite</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
@@ -1703,18 +1772,21 @@ footer {
       </div>
     </div>
 
-    <!-- Disaster Relief -->
+    <!-- Disaster Relief Response Gap Tracker -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">05 · Analytics · Apr 2026</div>
-      <h3 class="project-title">Disaster Relief Tracker</h3>
+      <div class="project-num">07 · Analytics · Apr 2026</div>
+      <h3 class="project-title">Disaster Relief Response Gap Tracker</h3>
       <p class="project-ctx">FEMA Response Gap Analytics Dashboard</p>
+      <div class="project-image">
+        <img src="drrgt.jpg" alt="Disaster Relief Response Gap Tracker Analytics Map" loading="lazy">
+      </div>
       <ul class="project-bullets">
-        <li>Processed and analyzed <strong>810K+ FEMA disaster relief records across 3,000+ counties</strong> to surface gaps in federal aid distribution.</li>
-        <li>ETL pipeline joining FEMA disbursements with U.S. Census income data revealed a weak aid-to-income correlation (r = 0.16) — a finding with real policy implications.</li>
-        <li>Deployed on <strong>AWS ECS + RDS + CloudFront</strong> via Terraform with Redis caching; infrastructure is reproducible and version-controlled.</li>
+        <li>Built an <strong>ETL/analytics pipeline processing 810K+ FEMA disaster records across 3,200+ counties</strong> to surface gaps in federal aid distribution.</li>
+        <li>Joined FEMA disbursements with U.S. Census income data revealing a weak aid-to-income correlation (r = 0.16) for policy analysis.</li>
+        <li>Deployed on <strong>AWS (ECS + RDS + CloudFront) via Terraform with Docker</strong> and Redis caching for reproducible infrastructure.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS ECS</span><span class="tag">Redis</span>
+        <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Redis</span>
       </div>
       <div class="project-links">
         <a href="https://github.com/Dhruva-Aher/Disaster-Relief-Response-Gap-Tracker-DRRGT-" aria-label="View Disaster Relief Tracker Source Code" class="project-link" target="_blank" rel="noopener">
@@ -1764,7 +1836,7 @@ footer {
           </svg>
         </a>
         <div>
-          <div class="timeline-role">Coordinator</div>
+          <div class="timeline-role">Coordinator, Administration</div>
           <div class="timeline-org">ACM at ASU · Hybrid · Tempe, Arizona</div>
         </div>
       </div>
@@ -1822,7 +1894,7 @@ footer {
       </div>
       <div class="edu-school-label">Arizona State University · Tempe, Arizona</div>
       <div class="edu-degree">B.S. Computer Science</div>
-      <div class="edu-field">Expected May 2029</div>
+      <div class="edu-field">Expected December 2028</div>
       <div class="edu-badges">
         <span class="edu-badge">Grand Challenges Scholars</span>
         <span class="edu-badge">Dean's List · Fall 2025, Spring 2026</span>
@@ -1859,7 +1931,7 @@ footer {
         <div class="edu-stat-icon">🎓</div>
         <div>
           <div class="edu-stat-val">Aug 2025</div>
-          <div class="edu-stat-label">Enrolled · May 2029 Expected</div>
+          <div class="edu-stat-label">Enrolled · Dec 2028 Expected</div>
         </div>
       </div>
       <div class="edu-involvement">
@@ -1891,9 +1963,11 @@ footer {
       <div class="skill-cat-label">Languages</div>
       <div class="skill-chips">
         <span class="skill-chip highlight">Python</span>
+        <span class="skill-chip highlight">Go</span>
         <span class="skill-chip highlight">TypeScript</span>
         <span class="skill-chip">JavaScript</span>
         <span class="skill-chip">Java</span>
+        <span class="skill-chip">C</span>
         <span class="skill-chip">SQL</span>
         <span class="skill-chip">Bash</span>
       </div>
@@ -1937,6 +2011,8 @@ footer {
         <span class="skill-chip highlight">MongoDB</span>
         <span class="skill-chip">Prisma</span>
         <span class="skill-chip">Distributed Systems</span>
+        <span class="skill-chip highlight">Concurrency</span>
+        <span class="skill-chip">Networking</span>
         <span class="skill-chip">Microservices</span>
         <span class="skill-chip">ETL Pipelines</span>
         <span class="skill-chip">Pandas</span>
@@ -1967,6 +2043,8 @@ footer {
         <span class="skill-chip highlight">OpenAI API</span>
         <span class="skill-chip highlight">Gemini API</span>
         <span class="skill-chip">LLM Tool Calling</span>
+        <span class="skill-chip">Natural Language Processing</span>
+        <span class="skill-chip">Information Retrieval</span>
         <span class="skill-chip">MongoDB Atlas Vector Search</span>
         <span class="skill-chip">Groq / LLaMA</span>
         <span class="skill-chip">Computer Vision</span>
@@ -2032,8 +2110,8 @@ footer {
   <div class="contact-label reveal">07 — Get in Touch</div>
   <h2 class="contact-heading reveal">Let's Build<br>Something Real.</h2>
   <p class="contact-sub reveal">
-    Seeking Summer 2026 internships in backend engineering, AI products, and ambitious teams.
-    Open to full-time roles starting May 2029.
+    Seeking Fall 2026 internships in backend engineering, AI products, and ambitious teams.
+    Open to full-time roles starting December 2028.
   </p>
   <div class="reveal">
     <a href="mailto:dhruvaaher48@gmail.com" class="contact-email">dhruvaaher48@gmail.com</a>
