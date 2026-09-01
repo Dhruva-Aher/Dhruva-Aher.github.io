@@ -743,7 +743,6 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
     <div class="section-line"></div>
   </div>
   <div class="projects-grid">
-
     <!-- UnderWrite -->
     <div class="project-card reveal tilt-card">
       <div class="project-num">01 · Featured · DataHub Agent Hackathon · 2026</div>
@@ -788,9 +787,75 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
       </div>
     </div>
 
+    <!-- RedisLite -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">02 · 2026</div>
+      <h3 class="project-title">RedisLite — Reproducibly Benchmarked Key-Value Store in Go</h3>
+      <p class="project-ctx">Redis-Compatible TCP Engine in Go</p>
+      <div class="project-image">
+        <img src="redislite.png" alt="RedisLite System Architecture and Performance Dashboard" loading="lazy">
+      </div>
+      <ul class="project-bullets">
+        <li>Wrote a Redis-compatible in-memory store in ~978 lines of Go — RESP protocol parser built from scratch with no external libraries, goroutine-per-connection TCP server, <code>sync.RWMutex</code>-guarded store, a background expiry sweeper on a 100ms tick, and AOF persistence replayed on startup.</li>
+        <li>Measured 74,498 ops/sec at 0.20ms P95 on the author's machine; the same benchmark reproduces at 185,917 ops/sec and 0.10ms P95 on a cloud VM. Throughput is hardware-dependent — reproduce it with <code>go run benchmark.go -clients 10 -commands 1000 -mix 30</code>.</li>
+        <li>Known scaling limit, documented honestly in the README: a single global <code>RWMutex</code> serializes writes. Sharding the store into an array of maps keyed by hash is the next step to cut lock contention.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Go</span><span class="tag">RESP Protocol</span><span class="tag">TCP</span><span class="tag">Concurrency</span><span class="tag">Key-Value Store</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/RedisLite" aria-label="View RedisLite Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+      </div>
+      <div class="project-metrics">
+        <div>
+          <div class="metric-val">74.5K</div>
+          <div class="metric-label">Ops/Sec (author HW)</div>
+        </div>
+        <div>
+          <div class="metric-val">0.20ms</div>
+          <div class="metric-label">P95 Latency</div>
+        </div>
+        <div>
+          <div class="metric-val">Green</div>
+          <div class="metric-label">go test ./...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AURA -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">03 · 2025–2026</div>
+      <h3 class="project-title">Aura — Lease-Based Distributed Job Orchestrator</h3>
+      <p class="project-ctx">Distributed Job Scheduling &amp; Crash Recovery Platform</p>
+      <div class="project-image">
+        <img src="aura.png" alt="Aura Distributed Task Orchestration Architecture" loading="lazy">
+      </div>
+      <ul class="project-bullets">
+        <li>Designed lease-based execution on Redis sorted sets: workers claim jobs with <code>ZPOPMAX</code> off a priority queue, hold a lease in <code>aura:leased</code> scored at <code>now + lease_duration</code>, and a Reaper loop re-enqueues any lease that expires — so a worker that dies mid-job never strands it.</li>
+        <li>Made PostgreSQL the durable source of truth and Redis the fast path: a Reconciler rebuilds Redis state from Postgres after a flush or eviction, and a single scheduler is elected via Redis <code>SET NX EX</code> on <code>aura:scheduler:lock</code> with a 15s TTL.</li>
+        <li>Handled overload and failure explicitly — adaptive backpressure returning HTTP 429, at-least-once delivery with idempotency fences, 30s worker heartbeat timeouts, a dead-letter queue, and SLO tracking. Load-tested at 20,000 jobs pushed through the API via <code>npm run load-test</code>.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/Aura" aria-label="View Aura Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
+        </a>
+        <a href="https://aurasys.vercel.app" aria-label="View Aura Live Demo" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
+          Live Demo
+        </a>
+      </div>
+    </div>
+
     <!-- JusticeQueue -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">02 · 2025–2026</div>
+      <div class="project-num">04 · 2025–2026</div>
       <h3 class="project-title">JusticeQueue — 13-Step AI Pipeline (8 Decisions/Run)</h3>
       <p class="project-ctx">Autonomous AI Legal Triage Infrastructure</p>
       <div class="project-image">
@@ -831,47 +896,9 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
       </div>
     </div>
 
-    <!-- RedisLite -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">03 · 2026</div>
-      <h3 class="project-title">RedisLite — Reproducibly Benchmarked Key-Value Store in Go</h3>
-      <p class="project-ctx">Redis-Compatible TCP Engine in Go</p>
-      <div class="project-image">
-        <img src="redislite.png" alt="RedisLite System Architecture and Performance Dashboard" loading="lazy">
-      </div>
-      <ul class="project-bullets">
-        <li>Wrote a Redis-compatible in-memory store in ~978 lines of Go — RESP protocol parser built from scratch with no external libraries, goroutine-per-connection TCP server, <code>sync.RWMutex</code>-guarded store, a background expiry sweeper on a 100ms tick, and AOF persistence replayed on startup.</li>
-        <li>Measured 74,498 ops/sec at 0.20ms P95 on the author's machine; the same benchmark reproduces at 185,917 ops/sec and 0.10ms P95 on a cloud VM. Throughput is hardware-dependent — reproduce it with <code>go run benchmark.go -clients 10 -commands 1000 -mix 30</code>.</li>
-        <li>Known scaling limit, documented honestly in the README: a single global <code>RWMutex</code> serializes writes. Sharding the store into an array of maps keyed by hash is the next step to cut lock contention.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Go</span><span class="tag">RESP Protocol</span><span class="tag">TCP</span><span class="tag">Concurrency</span><span class="tag">Key-Value Store</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/RedisLite" aria-label="View RedisLite Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-      </div>
-      <div class="project-metrics">
-        <div>
-          <div class="metric-val">74.5K</div>
-          <div class="metric-label">Ops/Sec (author HW)</div>
-        </div>
-        <div>
-          <div class="metric-val">0.20ms</div>
-          <div class="metric-label">P95 Latency</div>
-        </div>
-        <div>
-          <div class="metric-val">Green</div>
-          <div class="metric-label">go test ./...</div>
-        </div>
-      </div>
-    </div>
-
     <!-- Receipts -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">04 · OpenAI Build Week · 2026</div>
+      <div class="project-num">05 · OpenAI Build Week · 2026</div>
       <h3 class="project-title">Receipts — Reproducible Agent Claim Verification</h3>
       <p class="project-ctx">AI Agent Claim Verification Tool · OpenAI Build Week</p>
       <div class="project-image">
@@ -893,60 +920,9 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
       </div>
     </div>
 
-    <!-- AURA -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">05 · 2025–2026</div>
-      <h3 class="project-title">Aura — Lease-Based Distributed Job Orchestrator</h3>
-      <p class="project-ctx">Distributed Job Scheduling &amp; Crash Recovery Platform</p>
-      <div class="project-image">
-        <img src="aura.png" alt="Aura Distributed Task Orchestration Architecture" loading="lazy">
-      </div>
-      <ul class="project-bullets">
-        <li>Designed lease-based execution on Redis sorted sets: workers claim jobs with <code>ZPOPMAX</code> off a priority queue, hold a lease in <code>aura:leased</code> scored at <code>now + lease_duration</code>, and a Reaper loop re-enqueues any lease that expires — so a worker that dies mid-job never strands it.</li>
-        <li>Made PostgreSQL the durable source of truth and Redis the fast path: a Reconciler rebuilds Redis state from Postgres after a flush or eviction, and a single scheduler is elected via Redis <code>SET NX EX</code> on <code>aura:scheduler:lock</code> with a 15s TTL.</li>
-        <li>Handled overload and failure explicitly — adaptive backpressure returning HTTP 429, at-least-once delivery with idempotency fences, 30s worker heartbeat timeouts, a dead-letter queue, and SLO tracking. Load-tested at 20,000 jobs pushed through the API via <code>npm run load-test</code>.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/Aura" aria-label="View Aura Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-        <a href="https://aurasys.vercel.app" aria-label="View Aura Live Demo" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
-          Live Demo
-        </a>
-      </div>
-    </div>
-
-    <!-- FlowBoard -->
-    <div class="project-card reveal tilt-card">
-      <div class="project-num">06 · Full-Stack SaaS · Apr 2026</div>
-      <h3 class="project-title">FlowBoard — Real-Time Collaborative SaaS Platform</h3>
-      <p class="project-ctx">Multi-Tenant Workspace &amp; RBAC Architecture</p>
-      <div class="project-image">
-        <img src="flowboard.png" alt="FlowBoard Multi-Tenant SaaS Interface" loading="lazy">
-      </div>
-      <ul class="project-bullets">
-        <li>Engineered a multi-tenant SaaS backend with FastAPI, async PostgreSQL, isolated workspace security, JWT authentication, and RBAC.</li>
-        <li>Architected real-time state sync via WebSockets + Redis pub/sub with optimistic UI updates via TanStack Query and Zustand.</li>
-      </ul>
-      <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">WebSockets</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Dhruva-Aher/FlowBoard" aria-label="View FlowBoard Source Code" class="project-link" target="_blank" rel="noopener">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View Code
-        </a>
-      </div>
-    </div>
-
     <!-- PRBeliefs -->
     <div class="project-card reveal tilt-card">
-      <div class="project-num">07 · GitHub Marketplace · Apr 2026</div>
+      <div class="project-num">06 · GitHub Marketplace · Apr 2026</div>
       <h3 class="project-title">PRBeliefs — Shipped GitHub App for AI Code Review</h3>
       <p class="project-ctx">GitHub Marketplace AI Code Review Agent</p>
       <div class="project-image">
@@ -968,6 +944,29 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
         <a href="https://github.com/apps/prbeliefs" aria-label="View PRBeliefs on GitHub Marketplace" class="project-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809v6.442zm13-8.181L8 7.21 1.5 4.07v-.32a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v.32z"/></svg>
           Marketplace
+        </a>
+      </div>
+    </div>
+
+    <!-- FlowBoard -->
+    <div class="project-card reveal tilt-card">
+      <div class="project-num">07 · Full-Stack SaaS · Apr 2026</div>
+      <h3 class="project-title">FlowBoard — Real-Time Collaborative SaaS Platform</h3>
+      <p class="project-ctx">Multi-Tenant Workspace &amp; RBAC Architecture</p>
+      <div class="project-image">
+        <img src="flowboard.png" alt="FlowBoard Multi-Tenant SaaS Interface" loading="lazy">
+      </div>
+      <ul class="project-bullets">
+        <li>Engineered a multi-tenant SaaS backend with FastAPI, async PostgreSQL, isolated workspace security, JWT authentication, and RBAC.</li>
+        <li>Architected real-time state sync via WebSockets + Redis pub/sub with optimistic UI updates via TanStack Query and Zustand.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:1.5rem">
+        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">WebSockets</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Dhruva-Aher/FlowBoard" aria-label="View FlowBoard Source Code" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View Code
         </a>
       </div>
     </div>
