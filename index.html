@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta property="og:title" content="Dhruva Aher — Distributed Systems & AI Infrastructure Engineer">
-<meta property="og:description" content="Building distributed systems and AI agent governance tooling — from a Redis-compatible store hitting 75K ops/sec to a fail-closed ML deployment agent upstreamed into DataHub's own skills repo. ASU CS 4.0 GPA.">
+<meta property="og:description" content="Building distributed systems and AI agent governance tooling — from a Redis-compatible store benchmarked at 75K+ ops/sec to a fail-closed ML deployment agent proposed upstream to DataHub's skills repo. ASU CS 4.0 GPA.">
 <meta property="og:image" content="https://dhruva-aher.github.io/preview.png">
 <meta property="og:url" content="https://dhruva-aher.github.io/">
 <meta property="og:type" content="website">
@@ -489,6 +489,9 @@ section { padding: 7rem 3.5rem; border-top: 1px solid var(--border); }
 .project-bullets { list-style: none; flex: 1; margin-bottom: 1.5rem; }
 .project-bullets li { font-size: 0.9rem; color: var(--body); line-height: 1.75; padding-left: 1.2rem; position: relative; margin-bottom: 0.4rem; }
 .project-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.72rem; top: 0.1rem; }
+.project-bullets code { font-family: var(--mono); font-size: 0.82em; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 3px; padding: 0.05em 0.35em; color: var(--heading, inherit); }
+.project-bullets a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); transition: border-color 0.2s; }
+.project-bullets a:hover { border-bottom-color: var(--accent); }
 .project-metrics { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 0.5rem; min-width: 130px; }
 .metric-val { font-family: var(--display); font-size: 2.6rem; color: var(--accent); line-height: 1; }
 .metric-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
@@ -633,7 +636,7 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
           <span class="ac">D</span>HRUVA<br>AHER
         </h1>
         <p class="hero-sub">
-          <span id="typewriter">Building distributed systems and AI infrastructure — from a Redis-compatible store hitting 75K ops/sec to a fail-closed ML deployment agent upstreamed into DataHub's own skills repo.</span><span class="typewriter-cursor"></span>
+          <span id="typewriter">Building distributed systems and AI infrastructure — from a Redis-compatible store benchmarked at 75K+ ops/sec to a fail-closed ML deployment agent proposed upstream to DataHub's skills repo.</span><span class="typewriter-cursor"></span>
         </p>
         <div class="hero-badges">
           <span class="hero-badge accent-badge">Distributed Systems &amp; AI Infra</span>
@@ -675,7 +678,7 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
         I engineer high-performance distributed systems, cloud infrastructure, and AI agent governance — specializing in low-latency key-value stores, concurrent task orchestrators, and deterministic, fail-closed AI pipelines.
       </p>
       <p style="margin-bottom: 1.5rem;">
-        My recent work includes a Go Redis-compatible store hitting 75K+ ops/sec, a distributed orchestrator handling 20,000+ concurrent tasks, and a fail-closed ML deployment agent later upstreamed into DataHub's own skills repository.
+        My recent work includes a Go Redis-compatible store benchmarked at 75K+ ops/sec, a lease-based distributed job orchestrator load-tested at 20,000 jobs, and a fail-closed ML deployment agent whose pattern I proposed upstream to DataHub via an open proposal, implementation PR, and Core API issue.
       </p>
       <p style="margin-bottom: 2rem;">
         Currently studying Computer Science at Arizona State University (4.0 GPA, expected Dec 2028), seeking Fall 2026 software engineering internships.
@@ -749,7 +752,8 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
       <ul class="project-bullets">
         <li>Built a five-stage deployment agent (Acquisition, Normalization, Traversal, Evaluation, Verdict) that traverses DataHub column-level lineage to block ML models with target leakage before deploy.</li>
         <li>Kept the authorization path fully deterministic and fail-closed — an unreachable DataHub instance blocks the deploy instead of defaulting to approval; the LLM is scoped only to post-block remediation, never the verdict.</li>
-        <li>Validated the fail-closed boundary with 70 tests (67 running with no network dependency); upstreamed the pattern to DataHub's own skills repository via a proposal, an implementation PR, and a Core API issue.</li>
+        <li>Validated the fail-closed boundary with 70 tests (67 running with no network dependency, 3 skipped as network-gated) — reproducible with <code>python3 -m pytest</code>.</li>
+        <li>Proposed the pattern upstream to the official DataHub project as a <a href="https://github.com/datahub-project/datahub-skills/issues/136" target="_blank" rel="noopener">skill proposal</a>, an <a href="https://github.com/datahub-project/datahub-skills/pull/137" target="_blank" rel="noopener">implementation PR</a>, and a <a href="https://github.com/datahub-project/datahub/issues/19060" target="_blank" rel="noopener">Core API issue</a> for batch schemaField aspect fetches. All three are open, not yet merged.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">DataHub</span><span class="tag">GitHub Actions</span>
@@ -758,6 +762,14 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
         <a href="https://github.com/Dhruva-Aher/UnderWrite" aria-label="View UnderWrite Source Code" class="project-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           View Code
+        </a>
+        <a href="https://github.com/datahub-project/datahub-skills/pull/137" aria-label="View UnderWrite upstream pull request on the DataHub skills repository" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Upstream PR (open)
+        </a>
+        <a href="https://github.com/datahub-project/datahub/issues/19060" aria-label="View UnderWrite Core API issue on the DataHub repository" class="project-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Core API Issue (open)
         </a>
       </div>
       <div class="project-metrics">
@@ -771,7 +783,7 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
         </div>
         <div>
           <div class="metric-val">3</div>
-          <div class="metric-label">Upstream Contributions</div>
+          <div class="metric-label">Open Upstream Submissions</div>
         </div>
       </div>
     </div>
@@ -787,6 +799,8 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
       <ul class="project-bullets">
         <li>Engineered a 13-step model-directed LLM orchestration pipeline with Gemini Flash executing 8 autonomous decisions per run for tool selection &amp; resource allocation.</li>
         <li>Integrated MongoDB Atlas Vector Search &amp; GCP Vertex AI with OAuth 2.0 security &amp; Upstash Redis rate limiting.</li>
+        <li>Audited against 60 live cases: retrieval improved triage on 32 of them (53%), lifting average priority score by 6 points and upgrading 4 cases into the critical tier.</li>
+        <li>Scoped honestly — this is model-directed execution within a predefined graph, not autonomous planning from scratch, and the <code>/judge</code> page is explicitly static mock data.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Next.js 14</span><span class="tag">Vertex AI</span><span class="tag">Gemini API</span><span class="tag">MongoDB Atlas</span><span class="tag">Upstash Redis</span><span class="tag">Firebase</span>
@@ -820,14 +834,15 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
     <!-- RedisLite -->
     <div class="project-card reveal tilt-card">
       <div class="project-num">03 · 2026</div>
-      <h3 class="project-title">RedisLite — 75K+ Ops/Sec Key-Value Store</h3>
+      <h3 class="project-title">RedisLite — Reproducibly Benchmarked Key-Value Store in Go</h3>
       <p class="project-ctx">Redis-Compatible TCP Engine in Go</p>
       <div class="project-image">
         <img src="redislite.png" alt="RedisLite System Architecture and Performance Dashboard" loading="lazy">
       </div>
       <ul class="project-bullets">
-        <li>Engineered a Redis-compatible in-memory key-value store in Go implementing TCP networking and custom RESP protocol parsing.</li>
-        <li>Achieved 75K+ ops/sec throughput with sub-millisecond P95 latency under heavy concurrent client workloads.</li>
+        <li>Wrote a Redis-compatible in-memory store in ~978 lines of Go — RESP protocol parser built from scratch with no external libraries, goroutine-per-connection TCP server, <code>sync.RWMutex</code>-guarded store, a background expiry sweeper on a 100ms tick, and AOF persistence replayed on startup.</li>
+        <li>Measured 74,498 ops/sec at 0.20ms P95 on the author's machine; the same benchmark reproduces at 185,917 ops/sec and 0.10ms P95 on a cloud VM. Throughput is hardware-dependent — reproduce it with <code>go run benchmark.go -clients 10 -commands 1000 -mix 30</code>.</li>
+        <li>Known scaling limit, documented honestly in the README: a single global <code>RWMutex</code> serializes writes. Sharding the store into an array of maps keyed by hash is the next step to cut lock contention.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Go</span><span class="tag">RESP Protocol</span><span class="tag">TCP</span><span class="tag">Concurrency</span><span class="tag">Key-Value Store</span>
@@ -838,19 +853,34 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
           View Code
         </a>
       </div>
+      <div class="project-metrics">
+        <div>
+          <div class="metric-val">74.5K</div>
+          <div class="metric-label">Ops/Sec (author HW)</div>
+        </div>
+        <div>
+          <div class="metric-val">0.20ms</div>
+          <div class="metric-label">P95 Latency</div>
+        </div>
+        <div>
+          <div class="metric-val">Green</div>
+          <div class="metric-label">go test ./...</div>
+        </div>
+      </div>
     </div>
 
     <!-- Receipts -->
     <div class="project-card reveal tilt-card">
       <div class="project-num">04 · OpenAI Build Week · 2026</div>
-      <h3 class="project-title">Receipts — 19/19 Passing Agent Verification Tests</h3>
+      <h3 class="project-title">Receipts — Reproducible Agent Claim Verification</h3>
       <p class="project-ctx">AI Agent Claim Verification Tool · OpenAI Build Week</p>
       <div class="project-image">
         <img src="receipts.png" alt="Receipts AI Agent Claim Verification UI" loading="lazy">
       </div>
       <ul class="project-bullets">
         <li>Built an AI agent claim verification tool at OpenAI Build Week using React, Node.js, Codex CLI, and GPT-5.6.</li>
-        <li>Evaluates coding-agent completion claims against live git repos with 19 passing pipeline tests delivering MERGE/FIX/ESCALATE verdicts.</li>
+        <li>Evaluates coding-agent completion claims against live git repos, delivering MERGE/FIX/ESCALATE verdicts. Pipeline covered by 15 passing tests — <code>node --test server/pipeline/pipeline.test.mjs</code> reports 15 passed, 0 failed.</li>
+        <li>Made the result auditable rather than anecdotal: a <code>lied-test-run</code> fixture reproduces a false agent claim on demand, frozen transcripts live in <code>proofs/</code>, and stage timings are recorded (Codex claim extraction 9,876ms, command verification 214ms, git-diff inspection 61ms, receipt export 1ms, 10,152ms end-to-end, captured 17 Jul 2026).</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Codex CLI</span><span class="tag">GPT-5.6</span><span class="tag">AI Agents</span>
@@ -866,14 +896,15 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
     <!-- AURA -->
     <div class="project-card reveal tilt-card">
       <div class="project-num">05 · 2025–2026</div>
-      <h3 class="project-title">Aura — 20,000+ Concurrent Task Orchestrator</h3>
+      <h3 class="project-title">Aura — Lease-Based Distributed Job Orchestrator</h3>
       <p class="project-ctx">Distributed Job Scheduling &amp; Crash Recovery Platform</p>
       <div class="project-image">
         <img src="aura.png" alt="Aura Distributed Task Orchestration Architecture" loading="lazy">
       </div>
       <ul class="project-bullets">
-        <li>Engineered a distributed task scheduler in Node.js, Redis, &amp; PostgreSQL handling 20,000+ concurrent tasks with priority queues.</li>
-        <li>Implemented safe job-leasing locks preventing duplicate executions and automated crash recovery restoring 6,000+ tasks in &lt;2 seconds.</li>
+        <li>Designed lease-based execution on Redis sorted sets: workers claim jobs with <code>ZPOPMAX</code> off a priority queue, hold a lease in <code>aura:leased</code> scored at <code>now + lease_duration</code>, and a Reaper loop re-enqueues any lease that expires — so a worker that dies mid-job never strands it.</li>
+        <li>Made PostgreSQL the durable source of truth and Redis the fast path: a Reconciler rebuilds Redis state from Postgres after a flush or eviction, and a single scheduler is elected via Redis <code>SET NX EX</code> on <code>aura:scheduler:lock</code> with a 15s TTL.</li>
+        <li>Handled overload and failure explicitly — adaptive backpressure returning HTTP 429, at-least-once delivery with idempotency fences, 30s worker heartbeat timeouts, a dead-letter queue, and SLO tracking. Load-tested at 20,000 jobs pushed through the API via <code>npm run load-test</code>.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
@@ -916,14 +947,15 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
     <!-- PRBeliefs -->
     <div class="project-card reveal tilt-card">
       <div class="project-num">07 · GitHub Marketplace · Apr 2026</div>
-      <h3 class="project-title">PRBeliefs — &lt;1s Automated AI Code Reviews</h3>
+      <h3 class="project-title">PRBeliefs — Shipped GitHub App for AI Code Review</h3>
       <p class="project-ctx">GitHub Marketplace AI Code Review Agent</p>
       <div class="project-image">
         <img src="prbeliefs.png" alt="PRBeliefs AI Code Review Interface" loading="lazy">
       </div>
       <ul class="project-bullets">
-        <li>Shipped an automated code review agent on GitHub Marketplace delivering structured AI feedback in under 1 second per PR.</li>
+        <li>Shipped and installable as a real GitHub App, backed by a 30-test suite across ~2,226 lines of Python — <code>python3 -m pytest --asyncio-mode=auto</code> reports 30 passed.</li>
         <li>Architected a decoupled webhook ingestion pipeline using Redis async queues and Docker Compose to handle burst traffic gracefully.</li>
+        <li>Designed for low latency rather than benchmarked for it: review agents run in parallel via <code>asyncio.gather</code> against Groq-hosted inference, with webhook ingestion decoupled behind Redis. Treat sub-second review as a design target — there is no published benchmark artifact behind it.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Python</span><span class="tag">Redis</span><span class="tag">SQLite</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
@@ -943,14 +975,15 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
     <!-- Disaster Relief Response Gap Tracker -->
     <div class="project-card reveal tilt-card">
       <div class="project-num">08 · Analytics · Apr 2026</div>
-      <h3 class="project-title">Disaster Relief Tracker — 810K+ Records Analyzed</h3>
+      <h3 class="project-title">Disaster Relief Tracker — FEMA Response Gap ETL</h3>
       <p class="project-ctx">FEMA Response Gap Analytics &amp; AWS Infrastructure</p>
       <div class="project-image">
         <img src="drrgt.jpg" alt="Disaster Relief Response Gap Tracker Analytics Map" loading="lazy">
       </div>
       <ul class="project-bullets">
-        <li>Built an ETL analytics pipeline in Python/Pandas processing 810K+ FEMA disaster records across 3,200+ U.S. counties.</li>
-        <li>Automated AWS infrastructure (ECS, RDS, CloudFront, Redis) via Terraform and Docker for scalable data distribution.</li>
+        <li>Built a Celery-scheduled ETL pipeline ingesting OpenFEMA and Census APIs with pagination and exponential backoff, joined on FIPS codes and batch-upserted across 3,200+ U.S. counties.</li>
+        <li>Reduced the analysis to one auditable metric — response gap days, from disaster declaration date to obligation date — compared against peer counties matched on rural/urban class, population ±25%, and median income ±25%.</li>
+        <li>Precomputed quintiles so API reads are O(1) off cache. Runs on Terraform-managed AWS (ECS, RDS, CloudFront, Redis); without a <code>CENSUS_API_KEY</code> the pipeline falls back to a 20-county demo sample.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
         <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Redis</span>
@@ -1438,10 +1471,10 @@ function drawCanvas(ts) {
 requestAnimationFrame(drawCanvas);
 
 const phrases = [
-  'Building distributed systems and AI infrastructure — from a Redis-compatible store hitting 75K ops/sec to a fail-closed ML deployment agent.',
-  'Go Key-Value Store delivering 75K+ ops/sec with sub-millisecond P95 latency.',
-  'Distributed Task Orchestrator scaling to 20,000+ concurrent tasks.',
-  'Fail-closed ML deployment agent — upstreamed to DataHub\'s own skills repository.',
+  'Building distributed systems and AI infrastructure — from a Redis-compatible store benchmarked at 75K+ ops/sec to a fail-closed ML deployment agent.',
+  'Go Key-Value Store benchmarked at 75K+ ops/sec with sub-millisecond P95 latency.',
+  'Lease-based Distributed Job Orchestrator — leader election, reaper, reconciliation.',
+  'Fail-closed ML deployment agent — pattern proposed upstream to DataHub\'s skills repository.',
   'ASU Computer Science · 4.0 GPA · Expected Dec 2028 · AWS Certified.'
 ];
 let phraseIdx = 0, charIdx = phrases[0].length, deleting = true;
