@@ -53,4 +53,15 @@ My focus is **backend systems, applied AI, and agentic workflows** — not just 
 
 ### 🔎 Explore My Work
 
-Check out my pinned repositories below to see these systems in action, or visit my [portfolio](https://Dhruva-Aher.github.io) for the full breakdown.
+Strongest first:
+
+1. **[UnderWrite](https://github.com/Dhruva-Aher/UnderWrite)** — fail-closed ML deployment gate that blocks target leakage via DataHub column-level lineage. 70 tests. Pattern proposed upstream to DataHub ([proposal](https://github.com/datahub-project/datahub-skills/issues/136), [PR](https://github.com/datahub-project/datahub-skills/pull/137), [Core API issue](https://github.com/datahub-project/datahub/issues/19060) — all open).
+2. **[RedisLite](https://github.com/Dhruva-Aher/redislite)** — Redis-compatible store in ~978 lines of Go. RESP parser written from scratch, benchmarked at 74,498 ops/sec / 0.20ms P95 on my hardware.
+3. **[Aura](https://github.com/Dhruva-Aher/Aura)** — lease-based distributed job orchestrator. `ZPOPMAX` claims, a reaper for expired leases, Redis leader election, Postgres-backed reconciliation. [Live](https://aurasys.vercel.app)
+4. **[JusticeQueue](https://github.com/Dhruva-Aher/JusticeQueue)** — 13-step AI legal triage pipeline, audited on 60 live cases. [Live](https://justicequeuelive.vercel.app)
+5. **[Receipts](https://github.com/Dhruva-Aher/receipts)** — verifies coding-agent completion claims against the live repo. Built at OpenAI Build Week.
+6. **[PRBeliefs](https://github.com/apps/prbeliefs)** — shipped GitHub App for AI code review. 30 passing tests.
+
+📋 **[INTERVIEW.md](./INTERVIEW.md)** — every headline claim above, the command that verifies it, and an honest ledger of the numbers I removed because I couldn't substantiate them.
+
+Full breakdown on my [portfolio](https://Dhruva-Aher.github.io).
