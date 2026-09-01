@@ -836,10 +836,11 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
       <ul class="project-bullets">
         <li>Designed lease-based execution on Redis sorted sets: workers claim jobs with <code>ZPOPMAX</code> off a priority queue, hold a lease in <code>aura:leased</code> scored at <code>now + lease_duration</code>, and a Reaper loop re-enqueues any lease that expires — so a worker that dies mid-job never strands it.</li>
         <li>Made PostgreSQL the durable source of truth and Redis the fast path: a Reconciler rebuilds Redis state from Postgres after a flush or eviction, and a single scheduler is elected via Redis <code>SET NX EX</code> on <code>aura:scheduler:lock</code> with a 15s TTL.</li>
-        <li>Handled overload and failure explicitly — adaptive backpressure returning HTTP 429, at-least-once delivery with idempotency fences, 30s worker heartbeat timeouts, a dead-letter queue, and SLO tracking. Load-tested at 20,000 jobs pushed through the API via <code>npm run load-test</code>.</li>
+        <li>Handled overload and failure explicitly — adaptive backpressure returning HTTP 429 once queue depth passes a ceiling derived from observed drain rate, at-least-once delivery with idempotency fences, capped exponential retry backoff (<code>min(2^(n-1) × 1s, 60s)</code>) into a dead-letter queue, and 30s worker heartbeat timeouts. Claim, retry, and promote run as atomic Redis Lua scripts.</li>
+        <li>Backed the whole design with <strong>223 passing tests across 14 suites</strong>, including a leader-election suite that simulates the leader dying, its lock TTL expiring, and a follower taking over.</li>
       </ul>
       <div class="tags" style="margin-bottom:1.5rem">
-        <span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+        <span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Lua</span><span class="tag">Prisma</span><span class="tag">Docker</span>
       </div>
       <div class="project-links">
         <a href="https://github.com/Dhruva-Aher/Aura" aria-label="View Aura Source Code" class="project-link" target="_blank" rel="noopener">
@@ -850,6 +851,20 @@ footer { border-top: 1px solid var(--border); padding: 1.75rem 3.5rem; display: 
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm1.5 12.3l-1.5 1.5-1.5-1.5V9.5h3v2.8zm0-4.3H6.5v-3h3v3z"/></svg>
           Live Demo
         </a>
+      </div>
+      <div class="project-metrics">
+        <div>
+          <div class="metric-val">223</div>
+          <div class="metric-label">Passing Tests</div>
+        </div>
+        <div>
+          <div class="metric-val">3</div>
+          <div class="metric-label">Priority Tiers</div>
+        </div>
+        <div>
+          <div class="metric-val">15s</div>
+          <div class="metric-label">Leader Lock TTL</div>
+        </div>
       </div>
     </div>
 

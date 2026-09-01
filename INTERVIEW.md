@@ -162,11 +162,20 @@ because slow workers get reaped. Too long, and a genuinely dead worker's job sit
 deadline. This is a tuning parameter with real consequences in both directions, not a default to leave
 alone. Clock skew between workers and the reaper shifts the effective deadline.
 
-**Where it breaks, and what I do not claim.** The load test pushes 20,000 jobs through the API. That
-is a configuration I ran, not a proven concurrency ceiling, and the site now says exactly that. I have
-no chaos-tested proof of the recovery guarantees — killing workers under load and measuring the
-recovery is the obvious next step, and until I do it the crash-recovery story is a design argument
-backed by code, which is how I present it.
+**Evidence.** `npx vitest run` in `apps/worker` passes **223 tests across 14 suites** (run
+`npx prisma generate` first, or two suites fail on an uninitialized Prisma client). That includes
+`SchedulerLock.test.ts`, which models `SET NX EX` semantics precisely and walks the full lifecycle:
+a leader dies, its TTL expires, and a follower takes over. The claim, retry, and promote paths are
+atomic Redis Lua scripts in `packages/redis/src/lua.ts`, where retry backoff is
+`min(2^(attempts-1) × 1000ms, 60000ms)`.
+
+**Where it breaks, and what I do not claim.** The load test harness supports five scenarios — burst,
+steady, mixed, priority-storm, failure-flood — and reports P50/P95/P99, but **no measured results are
+committed to the repository**, so I quote no throughput number for Aura. I also have no chaos-tested
+proof of the recovery guarantees against a real cluster: the leader-election lifecycle is verified
+against a faithful in-memory Redis fake, not against Redis under partition. Killing workers under load
+and measuring actual recovery time is the obvious next step. Until then the crash-recovery story is a
+design argument backed by 223 tests, which is how I present it.
 
 ---
 
